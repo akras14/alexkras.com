@@ -1,10 +1,12 @@
-# X Takeaways from Famo.us Training at HTML5 Developers Conference
+[Looks like Famo.us pivoted, before I got around to publishing this post.](http://techcrunch.com/2015/11/06/nopen-source/)
+
+**Old Post - X Takeaways from Famo.us Training at HTML5 Developers Conference**
 
 Yesterday, I attended Famo.us full day training event at HTML5 conference. Bellow, is the summary of the key takeaways that I made for myself.
 
 ## 1. Famo.us is Cool
 
-I saw Famo.us receiving a lot of criticism lately on various social media sites. While I tend to agree with most of complains, I think they are missing the big picture. In my opinion, Famo.us is a great step in the right direction for the web as a whole. 
+I saw Famo.us receiving a lot of criticism lately on various social media sites. While I tend to agree with most of complains, I think they are missing the big picture. In my opinion, Famo.us is a great step in the right direction for the web as a whole.
 
 ### Complaint A. Scrollbar Experience Sucks
 
@@ -14,9 +16,9 @@ I agree 100%. Scroll bar experience does suck. It feels un-natural and off. But,
 
 I also agree, Famo.us was a bit overhyped. That being said, as a former co-founder of a [start up](http://www.digispoke.com/) that failed to raise money, I completely understand the importance of hype.
 
-Whether you like it or not, innovation takes money. And investors don't like giving their money away to just anybody, they want to see big vision, they want to see media coverage, and they want to see signs of early traction. 
+Whether you like it or not, innovation takes money. And investors don't like giving their money away to just anybody, they want to see big vision, they want to see media coverage, and they want to see signs of early traction.
 
-Just having a good vision is not enough. Executing on a big vision is a whole different story. 
+Just having a good vision is not enough. Executing on a big vision is a whole different story.
 
 In his book, "Behind the Cloud The Untold Story of How Salesforce.com Went from Idea to Billion-dollar Company-and Revolutionized an Industry" Marc Benioff tells of various hype generating tactics that he used, including **paying actors to stage fake protests and competitor's conferences**.
 
