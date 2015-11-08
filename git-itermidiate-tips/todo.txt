@@ -1,0 +1,17 @@
+TODO
+{{example of git bisect in action}} - GIF
+
+DONE
+{{IMAGE with examples}} - GIF - --online --graph, --author --oneline
+{{image of git log}} - IMG - search
+{{image of pulling out hair}} - PNG
+{{image of git blame}} -- PNG - just git blame
+{{image of git log}} - PNG - git log line
+{{ example of git merge --no-ff }} - PNG - No -ff example
+{Image of git difftool -d} - PNG - Meld
+{Image of git add -p} - PNG
+{image of git branch -a --merged} - PNG
+{image of result of ^} - PNG - old branches
+{{image of git stash -p ? }} - PNG
+{{image of git status -s with arrows pointing at stages}}. - work
+{{Example of git commit --amend}} -- GIF ammend
