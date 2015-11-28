@@ -7,7 +7,8 @@ Please visit: http://www.alexkras.com if you are trying to find the context for 
 
 ## [November 2015](http://www.alexkras.com/2015/11/)
 
-  * 20: [Debugging Nested Scope in Angularjs](http://www.alexkras.com/debugging-nested-scope-in-angularjs/) (0)
+  * 28: [Using Code Snippets to Test, Save and Reuse JavaScript Code in Chrome Developer Tools](http://www.alexkras.com/using-code-snippets-to-test-save-and-reuse-javascript-code-in-chrome-developer-tools/) (0)
+  * 20: [Debugging Nested Scope in Angularjs](http://www.alexkras.com/debugging-nested-scope-in-angularjs/) (1)
 
 ## [October 2015](http://www.alexkras.com/2015/10/)
 
@@ -29,7 +30,7 @@ Please visit: http://www.alexkras.com if you are trying to find the context for 
 
 ## [February 2015](http://www.alexkras.com/2015/02/)
 
-  * 28: [How To Run Meld on Mac OS X Yosemite Without Homebrew, MacPorts, or Think](http://www.alexkras.com/how-to-run-meld-on-mac-os-x-yosemite-without-homebrew-macports-or-think/) (41)
+  * 28: [How To Run Meld on Mac OS X Yosemite Without Homebrew, MacPorts, or Think](http://www.alexkras.com/how-to-run-meld-on-mac-os-x-yosemite-without-homebrew-macports-or-think/) (42)
 
 ## [June 2014](http://www.alexkras.com/2014/06/)
 
@@ -44,7 +45,7 @@ Please visit: http://www.alexkras.com if you are trying to find the context for 
 
 ## [April 2014](http://www.alexkras.com/2014/04/)
 
-  * 23: [Pipe Your Localhost to the Real World](http://www.alexkras.com/pipe-your-localhost-to-the-real-world/) (1)
+  * 23: [Pipe Your Localhost to the Real World](http://www.alexkras.com/pipe-your-localhost-to-the-real-world/) (2)
   * 23: [Summary of a talk by Tom Katis – CEO of Voxer at Silicon Valley Bank Talks](http://www.alexkras.com/summary-of-a-talk-by-tom-katis-ceo-of-voxer-at-silicon-valley-bank-talks/) (0)
   * 23: [MySQL Pretty Print in Command Line](http://www.alexkras.com/my-sql-pretty-print-in-command-line/) (1)
 
