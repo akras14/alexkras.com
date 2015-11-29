@@ -12,7 +12,7 @@ Code snippets is a special view that shows up in your Chrome developer tools. Yo
 
 You can right click in the left column, and select "new" from drop down menu to create a new snippet.
 
-Once the new sniper is created, you can use the white space in the right column as a regular code editor.
+Once the new snippet is created, you can use the white space in the right column as a regular code editor.
 
 Once you are done, you can run the snippet by either hitting the small play button to the right of the snippet, or hitting "Command + Enter" on Mac or "Control + Enter" on Windows.
 

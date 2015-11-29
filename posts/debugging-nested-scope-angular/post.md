@@ -1,13 +1,16 @@
+## Overview
+I've been developing Angular for over a year now. As you may know, Angular uses nested scope and often times it is fairly hard to understand code hierarchy. There are tools available to help visualize the nested scope structure, but I found them to be hard to use. I wanted a flow where I could inspect Angular scope similarly to how I inspect other HTML elements and JavaScript variables. I've created a simple snippet that allows me to do just that.
+
 ## Demo
 <a href="http://www.alexkras.com/wp-content/uploads/scopeTree.gif"><img src="http://www.alexkras.com/wp-content/uploads/scopeTree.gif" alt="scopeTree" width="780" height="488" class="alignnone size-full wp-image-958" /></a>
 
 ## TLDR;
 
-1. Copy paste the script bellow into your Chrome Dev Tools console or add it to a snippet (read bellow for more info on snippets).
+1. Copy paste the script bellow into your Chrome Dev Tools console or add it to a snippet. [You can learn more about Google Chrome Dev Tools Snippets here](http://www.alexkras.com/using-code-snippets-to-test-save-and-reuse-javascript-code-in-chrome-developer-tools/).
 1. Select element for which you want to debug the nested scope.
 1. Run `scopeTree($0)` in your console to see the element, all the parent elements and their scope.
 
-```javascript
+<pre>
 function getElementByScopeId(id) {
   //Learned from http://stackoverflow.com/questions/23253506/get-dom-element-by-scope-id
   var elem;
@@ -45,7 +48,7 @@ function scopeTree(scope, recCount){
     scopeTree(scope.$parent, ++recCount);
   }
 }
-```
+</pre>
 
 ## Run Script Quickly
 Copying and pasting the script into console is fine to test things out, but it could get annoying if you want to use it often.  Luckily, Chrome Dev Tools has a cool and not very well know feature called "Snippets".
@@ -87,7 +90,7 @@ Turns out you can, and I learned it by googleing and landing on this page:
 
 Which led me to this piece of code.
 
-```javascript
+<pre>
 function getElementByScopeId(id) {
   //Learned from http://stackoverflow.com/questions/23253506/get-dom-element-by-scope-id
   var elem;
@@ -102,7 +105,7 @@ function getElementByScopeId(id) {
   });
   return elem;
 }
-```
+</pre>
 
 ### Putting it all together
 Once I could get the scope for selected element, and it's parent element via it parent element scope id, it was just a matter of recursively going up the parent tree, until the root node is found.
@@ -112,6 +115,6 @@ This allowed me to console log every element and it scope, which (in my opinion)
 ### Why don't you just use the Batarang's nested scope view?
 I am glad you asked.
 
-Batarang does have a nested scope view, but I could never make it work for me. It just seemed too hard to visualize the scopes and elements that they was associated with. In addition, the expanded scope view that list all of scope's parameters and methods was just too long and hard to look through.
+Batarang does have a nested scope view, but I could never make it work for me. It just seemed too hard to visualize the scopes and elements that they were associated with. In addition, the expanded scope view that list all of scope's parameters and methods was just too long and hard to look through.
 
 I prefer hovering over an element to see it highlighted in the web-page, as well as inspecting the scope object in Chrome Dev tools console.

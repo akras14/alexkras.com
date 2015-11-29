@@ -1,1 +1,1 @@
-Debugging Nested Scope in Angularjs
+Inspecting Nested Scope in Angularjs
