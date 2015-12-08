@@ -1,0 +1,36 @@
+TODO - List out installed names vs import names if different. List dependancies if needed.
+beautifulsoup4 bs4
+copy
+csv
+datetime
+docx #python-docx
+imapclient
+imaplib
+json
+logging
+openpyxl
+os
+pprint
+pyautogui
+PyPDF2
+pyperclip
+pyzmail
+readDocx
+re
+requests
+send2trash
+shelve
+shutil
+smtplib
+subprocess
+threading
+time
+traceback
+twilio
+webbrowser #selenium
+zipfile
+
+pillow
+pyobjc-core(OSX only)
+pyobjc (OSX Only Can take up to 20 minutes)
+python3-xlib (On Linux)
