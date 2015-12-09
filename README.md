@@ -5,10 +5,14 @@ Please visit: http://www.alexkras.com if you are trying to find the context for 
 
 # Table of Contents
 
+## [December 2015](http://www.alexkras.com/2015/12/)
+
+  * 09: [Review – Automate the Boring Stuff with Python by Al Sweigart](http://www.alexkras.com/review-automate-the-boring-stuff-with-python-by-al-sweigart/) (0)
+
 ## [November 2015](http://www.alexkras.com/2015/11/)
 
-  * 28: [Using Code Snippets to Test, Save and Reuse JavaScript Code in Chrome Developer Tools](http://www.alexkras.com/using-code-snippets-to-test-save-and-reuse-javascript-code-in-chrome-developer-tools/) (0)
-  * 20: [Debugging Nested Scope in Angularjs](http://www.alexkras.com/debugging-nested-scope-in-angularjs/) (1)
+  * 28: [Using Code Snippets to Test, Save and Reuse JavaScript Code in Chrome Developer Tools](http://www.alexkras.com/using-code-snippets-to-test-save-and-reuse-javascript-code-in-chrome-developer-tools/) (1)
+  * 20: [Inspecting Nested Scope in Angularjs](http://www.alexkras.com/debugging-nested-scope-in-angularjs/) (3)
 
 ## [October 2015](http://www.alexkras.com/2015/10/)
 
@@ -17,11 +21,11 @@ Please visit: http://www.alexkras.com if you are trying to find the context for 
 ## [September 2015](http://www.alexkras.com/2015/09/)
 
   * 12: [Notes from 2015 WebRTC Conference Co-Hosted by Google](http://www.alexkras.com/notes-from-2015-webrtc-show-organized-by-krankygeek-and-hosted-by-google/) (3)
-  * 08: [19 Tips For Everyday Git Use](http://www.alexkras.com/19-git-tips-for-everyday-use/) (20)
+  * 08: [19 Tips For Everyday Git Use](http://www.alexkras.com/19-git-tips-for-everyday-use/) (22)
 
 ## [April 2015](http://www.alexkras.com/2015/04/)
 
-  * 28: [11 Tips to Improve AngularJS Performance](http://www.alexkras.com/11-tips-to-improve-angularjs-performance/) (30)
+  * 28: [11 Tips to Improve AngularJS Performance](http://www.alexkras.com/11-tips-to-improve-angularjs-performance/) (31)
   * 14: [Simple HTTPS Test Server Using Node.js](http://www.alexkras.com/simple-https-test-server-using-node-js/) (0)
 
 ## [March 2015](http://www.alexkras.com/2015/03/)
