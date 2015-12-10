@@ -7,7 +7,7 @@ Please visit: http://www.alexkras.com if you are trying to find the context for 
 
 ## [December 2015](http://www.alexkras.com/2015/12/)
 
-  * 09: [Review – Automate the Boring Stuff with Python by Al Sweigart](http://www.alexkras.com/review-automate-the-boring-stuff-with-python-by-al-sweigart/) (0)
+  * 09: [Book Review – Automate the Boring Stuff with Python by Al Sweigart](http://www.alexkras.com/review-automate-the-boring-stuff-with-python-by-al-sweigart/) (1)
 
 ## [November 2015](http://www.alexkras.com/2015/11/)
 
