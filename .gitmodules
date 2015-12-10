@@ -1,0 +1,3 @@
+[submodule "posts/memory-leak/memory-leak-example"]
+	path = posts/memory-leak/memory-leak-example
+	url = https://github.com/akras14/memory-leak-example.git
