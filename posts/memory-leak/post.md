@@ -7,13 +7,25 @@ My intent for this post is to be a simple guide for debugging a memory leak in N
 ## Minimal Theory
 JavaScript is a garbage collected language. Therefore, all memory used by a Node process is being automatically allocated and de-allocated by the V8 JavaScript engine.
 
-How does V8 know when to de-allocated the memory? V8 Keeps a graph of all variables in the program, starting from a root node. There are 4 types of data types in JavaScript: Boolean, String, Number, and Object. First 3 are simple types, and they can only hold on to the data that is assigned to them (i.e. string of text). Objects, and everything else in JavaScript is an object (i.e. Arrays are Objects), can keep references (pointers) to other objects. Periodically V8 will walk through the Memory Graph, trying to identify groups of data that can no longer be reached from the root node. If it's is not reachable from the root node, V8 assumes that the data is no longer used and releases the memory. This process is called Garbage Collection.
+How does V8 know when to de-allocated the memory? V8 Keeps a graph of all variables in the program, starting from a root node. There are 4 types of data types in JavaScript: Boolean, String, Number, and Object. First 3 are simple types, and they can only hold on to the data that is assigned to them (i.e. string of text). Objects, and everything else in JavaScript is an object (i.e. Arrays are Objects), can keep references (pointers) to other objects.
+
+{image-of-data-graph}
+
+Periodically V8 will walk through the Memory Graph, trying to identify groups of data that can no longer be reached from the root node. If it's is not reachable from the root node, V8 assumes that the data is no longer used and releases the memory. This process is called Garbage Collection.
+
+### When does a memory leak occur?
 
 Memory leak occurs in JavaScript when some no longer needed data is still reachable from the root node. V8 will assume that the data is still being used and will not release the memory. **In order to debug a memory leak we need to locate the data that is being kept by mistake, and make sure V8 is able to clean it up.**
 
 It's also important to note that Garbage Collection does not run at all times. Normally V8 can trigger garbage collection when it deems appropriate. For example it could run a Garbage Collection periodically, or it could trigger an out of turn Garbage Collection if it senses that the amount of free memory is getting low. Node has a limited number for memory available to each process, so V8 has to use whatever it has wisely.
 
-The later case of out of turn Garbage Collection could be a source of significant performance degradation. Imagine you have an app with a lot of memory leaks. Soon, Node process will begin to run out of memory, which would cause V8 to trigger an out of turn Garbage Collection. But since, most of the data can still be reach from the root node, very little of it will get cleaned up, keeping most of it in place. Sooner than later, Node process would run out of memory again, triggering another Garbage Collection. Before you know it, you app goes into a constant Garbage Collection cycle, just to try keeping the process functioning. Since V8 spends most of the time handling Garbage Collection, very little resources are left to run the actual program.
+{some-clever-image-node-out-of-memroy}
+
+The later case of out of turn Garbage Collection could be a source of significant performance degradation.
+
+Imagine you have an app with a lot of memory leaks. Soon, Node process will begin to run out of memory, which would cause V8 to trigger an out of turn Garbage Collection. But since, most of the data can still be reach from the root node, very little of it will get cleaned up, keeping most of it in place.
+
+Sooner than later, Node process would run out of memory again, triggering another Garbage Collection. Before you know it, you app goes into a constant Garbage Collection cycle, just to try keeping the process functioning. Since V8 spends most of the time handling Garbage Collection, very little resources are left to run the actual program.
 
 ## Step 1. Reproduce and confirm the problem
 
@@ -28,7 +40,7 @@ I've create a simple memory leak program, that you can see here: https://github.
 
 You can clone it, run `npm install` and then run `node --expose-gc index.js` to see it in action.
 
-```
+```JavaScript
 "use strict";
 require('heapdump');
 
@@ -88,7 +100,7 @@ If you run the program, you'll see it begin to output the stats data. Let it run
 
 You'll see that the memory is quickly growing, even though we are triggering Garbage Collection every 2 seconds right before we get the stats via:
 
-```
+```JavaScript
 //1. Force garbage collection every time this function is called
 try {
   global.gc();
@@ -129,7 +141,7 @@ If you curious how I've plotted the data, read on. If not please skip to the nex
 
 Relevant parts are:
 
-```
+```JavaScript
 var fs = require('fs');
 var stats = [];
 
@@ -156,7 +168,7 @@ process.on('SIGINT', function(){
 
 and
 
-```
+```Python
 #!/usr/bin/env python
 
 import matplotlib.pyplot as plt
@@ -180,7 +192,7 @@ You can check out the **plot** branch, and run the program as usual. Once you ar
 
 If we uncomment the line
 
-```
+```JavaScript
 cleanUpData(leakyData, randomObject); //<-- Forgot to clean up
 ```
 
