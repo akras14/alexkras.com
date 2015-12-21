@@ -29,11 +29,13 @@ Sooner than later, Node process would run out of memory again, triggering anothe
 
 ## Step 1. Reproduce and confirm the problem
 
-As I've indicated earlier, V8 JavaScript engine has a complicated logic that it uses to determine when Garbage Collection should run. What it means in practical terms, that even though we can see a memory for the process continue to go up, we cannot be certain that we are witnessing a memory leak, until we know that Garbage Collection has ran, allowing unused memory to be cleaned up.
+As I've indicated earlier, V8 JavaScript engine has a complicated logic that it uses to determine when Garbage Collection should run. What it means in practical terms, that even though we can see a memory for the process continue to go up, **we cannot be certain that we are witnessing a memory leak, until we know that Garbage Collection has ran**, allowing unused memory to be cleaned up.
 
 Thankfully, Node allows us to manually trigger Garbage Collection, and it is the first thing that we should do when trying confirm a memory leak. This can be accomplished by running Node with `--expose-gc` flag (i.e. `node --expose-gc index.js`). Once node is running in that mode, you can programmatically trigger a Garbage Collection at any time by calling `global.gc()` from your program.
 
 You can also check the amount of memory used by your process by calling `process.memoryUsage().heapUsed`.
+
+By manually triggering garbage collection and checking the heap used, you can determine if you in fact observing a memory leak in your program.
 
 ### Sample program
 I've create a simple memory leak program, that you can see here: https://github.com/akras14/memory-leak-example
@@ -93,6 +95,7 @@ setInterval(generateHeapDumpAndStats, 2000); //Do garbage collection and heap du
 
 
 The program will:
+
 1. Generate a random object every 5 milliseconds and store it in 2 arrays, one called _leakyData_ and another _nonLeakyData_. We will clean up the nonLeakyData array every 5 milliseconds, but we'll **"forget"** to clean up the leakyData array.
 2. Every 2 seconds the program will output the amount of memory used (and generate a heap dump, but we'll talk more about than in the next section).
 
@@ -115,6 +118,7 @@ console.log("Program is using " + heapUsed + " bytes of Heap.")
 ```
 
 with the output looking something like the following:
+
 ```
 Program is using 3783656 bytes of Heap.
 Program is using 3919520 bytes of Heap.
@@ -137,7 +141,7 @@ If your plot the data, memory growth becomes even more evident.
 
 {with-memory-leak.png}
 
-If you curious how I've plotted the data, read on. If not please skip to the next section. I've saved the stats that are being outputted into a json file, and then read it in and plotted it with a few lines of of Python. I've kept it on a separate brunch to avoid confusion, but you can check it out here: https://github.com/akras14/memory-leak-example/tree/plot
+If you curious how I've plotted the data, read on. If not please skip to the next section. I am saving the stats being outputted into a JSON file, and then read it in and plotted it with a few lines of of Python. I've kept it on a separate brunch to avoid confusion, but you can check it out here: https://github.com/akras14/memory-leak-example/tree/plot
 
 Relevant parts are:
 
@@ -186,9 +190,38 @@ plt.show()
 
 You can check out the **plot** branch, and run the program as usual. Once you are finished run `python plot.py` to generate the plot. You'll need to have Matplotlib library installed on your machine for it to work.
 
-## Step 2. Take at least 3 heap dumps
+## Step 2. Take at least 3 Heap dumps
+OK, so we've reproduce the problem, now what? Now we need to figure out where the problem is and fix it :)
+
+You might have noticed the following lines in my sample program above:
+
+```JavaScript
+require('heapdump');
+// ---skip---
+
+//3. Get Heap dump
+process.kill(process.pid, 'SIGUSR2');
+
+// ---skip---
+```
+
+I am using a node-heapdump module, that you can find here: https://github.com/bnoordhuis/node-heapdump
+
+In order to use node-heapdump, you just have to:
+
+1. Install it.
+2. Require it at the top of your program
+3. Call `kill -USR2 <pid>` on Unix like platforms
+
+If you've never see the `kill` part before, it's a command in Unix that allows you to (among other things) send a custom signal(aka User Signal) to any running process. Node-heapdump is configured to take a Heap dump of the process, any time it receives a **user signal two** hence the `-USR2`, followed by process id.
+
+In my sample program I automate the `kill -USR2 <pid>` command by running `process.kill(process.pid, 'SIGUSR2');`, where `process.kill` is a node wrapper for `kill` command and `process.pid` gets the id for the current Node process. I run this command after each Garbage Collection to get a clean Heap dump.
+
+Next section will cover how we can use the generated Heap dumps to isolate the memory leak.
 
 ## Step 3. Find the problem
+
+## Step 4. Confirm that the issue is resolved
 
 If we uncomment the line
 
