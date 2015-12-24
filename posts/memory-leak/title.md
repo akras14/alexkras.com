@@ -1,1 +1,1 @@
-Simple Guide to Debugging JavaScript Memory Leaks in Node.js
+Simple Guide to Finding a JavaScript Memory Leaks in Node.js

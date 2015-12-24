@@ -7,7 +7,8 @@ Please visit: http://www.alexkras.com if you are trying to find the context for 
 
 ## [December 2015](http://www.alexkras.com/2015/12/)
 
-  * 09: [Book Review – Automate the Boring Stuff with Python by Al Sweigart](http://www.alexkras.com/review-automate-the-boring-stuff-with-python-by-al-sweigart/) (1)
+  * 24: [Simple Guide to Finding a JavaScript Memory Leak in Node.js](http://www.alexkras.com/simple-guide-to-finding-a-javascript-memory-leak-in-node-js/) (0)
+  * 09: [Book Review – Automate the Boring Stuff with Python by Al Sweigart](http://www.alexkras.com/review-automate-the-boring-stuff-with-python-by-al-sweigart/) (2)
 
 ## [November 2015](http://www.alexkras.com/2015/11/)
 
@@ -21,7 +22,7 @@ Please visit: http://www.alexkras.com if you are trying to find the context for 
 ## [September 2015](http://www.alexkras.com/2015/09/)
 
   * 12: [Notes from 2015 WebRTC Conference Co-Hosted by Google](http://www.alexkras.com/notes-from-2015-webrtc-show-organized-by-krankygeek-and-hosted-by-google/) (3)
-  * 08: [19 Tips For Everyday Git Use](http://www.alexkras.com/19-git-tips-for-everyday-use/) (22)
+  * 08: [19 Tips For Everyday Git Use](http://www.alexkras.com/19-git-tips-for-everyday-use/) (24)
 
 ## [April 2015](http://www.alexkras.com/2015/04/)
 
@@ -30,7 +31,7 @@ Please visit: http://www.alexkras.com if you are trying to find the context for 
 
 ## [March 2015](http://www.alexkras.com/2015/03/)
 
-  * 10: [Git Cheat Sheet](http://www.alexkras.com/getting-started-with-git/) (9)
+  * 10: [Git Cheat Sheet](http://www.alexkras.com/getting-started-with-git/) (11)
 
 ## [February 2015](http://www.alexkras.com/2015/02/)
 

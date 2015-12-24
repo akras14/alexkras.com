@@ -12,9 +12,9 @@
 <a name="intro"></a>
 ## Introduction
 
-Few months ago I had to debug a memory leak in Node.js. I found a good number of articles dedicated to the subject, but even after carefully reading some of them, I was still pretty confused on what exactly I should do to debug our problem.
+Few months ago, I had to debug a memory leak in Node.js. I found a good number of articles dedicated to the subject, but even after carefully reading some of them, I was still pretty confused on what exactly I should do to debug our problem.
 
-My intent for this post is to be a simple guide for debugging a memory leak in Node. I will outline a single easy to follow approach, that should (in my opinion) be a starting point for any memory leak debugging in Node. For some cases this approach may not be enough, and I will link to some other resources that you may want to consider.
+My intent for this post is to be a simple guide for funding a memory leak in Node. I will outline a single easy to follow approach, that should (in my opinion) be a starting point for any memory leak debugging in Node. For some cases, this approach may not be enough. I will link to some other resources that you may want to consider.
 
 <a name="min-theory"></a>
 ## Minimal Theory
@@ -22,7 +22,7 @@ JavaScript is a garbage collected language. Therefore, all memory used by a Node
 
 How does V8 know when to de-allocate the memory? V8 keeps a graph of all variables in the program, starting from the root node. There are 4 types of data types in JavaScript: Boolean, String, Number, and Object. First 3 are simple types, and they can only hold on to the data that is assigned to them (i.e. string of text). Objects, and everything else in JavaScript is an object (i.e. Arrays are Objects), can keep references (pointers) to other objects.
 
-{memory-graph}
+<a href="http://www.alexkras.com/wp-content/uploads/memory-graph.png" rel="attachment wp-att-1009"><img src="http://www.alexkras.com/wp-content/uploads/memory-graph.png" alt="memory-graph" width="693" height="421" class="aligncenter size-full wp-image-1009" /></a>
 
 Periodically V8 will walk through the Memory Graph, trying to identify groups of data that can no longer be reached from the root node. If it's not reachable from the root node, V8 assumes that the data is no longer used and releases the memory. This process is called **Garbage Collection**.
 
@@ -30,13 +30,13 @@ Periodically V8 will walk through the Memory Graph, trying to identify groups of
 
 Memory leak occurs in JavaScript when some no-longer-needed-data is still reachable from the root node. V8 will assume that the data is still being used and will not release the memory. **In order to debug a memory leak we need to locate the data that is being kept by mistake, and make sure V8 is able to clean it up.**
 
-It's also important to note that Garbage Collection does not run at all times. Normally V8 can trigger garbage collection when it deems appropriate. For example it could run a Garbage Collection periodically, or it could trigger an out of turn Garbage Collection if it senses that the amount of free memory is getting low. Node has a limited number for memory available to each process, so V8 has to use whatever it has wisely.
+It's also important to note that Garbage Collection does not run at all times. Normally V8 can trigger garbage collection when it deems appropriate. For example, it could run a Garbage Collection periodically, or it could trigger an out of turn Garbage Collection if it senses that the amount of free memory is getting low. Node has a limited number for memory available to each process, so V8 has to use whatever it has wisely.
 
-{node-error}
+<a href="http://www.alexkras.com/wp-content/uploads/node-error.png" rel="attachment wp-att-1011"><img src="http://www.alexkras.com/wp-content/uploads/node-error.png" alt="node-error" width="199" height="150" class="aligncenter size-full wp-image-1011" /></a>
 
 The later case of **out of turn Garbage Collection** could be a **source of significant performance degradation**.
 
-Imagine you have an app with a lot of memory leaks. Soon, Node process will begin to run out of memory, which would cause V8 to trigger an out of turn Garbage Collection. But since, most of the data can still be reach from the root node, very little of memory will get cleaned up, keeping most of it in place.
+Imagine you have an app with a lot of memory leaks. Soon, Node process will begin to run out of memory, which would cause V8 to trigger an out of turn Garbage Collection. But since most of the data can still be reach from the root node, very little of memory will get cleaned up, keeping most of it in place.
 
 Sooner than later, Node process would run out of memory again, triggering another Garbage Collection. Before you know it, you app goes into a constant Garbage Collection cycle, just to try keeping the process functioning. Since V8 spends most of the time handling Garbage Collection, very little resources are left to run the actual program.
 
@@ -49,10 +49,10 @@ Thankfully, Node allows us to manually trigger Garbage Collection, and it is the
 
 You can also check the amount of memory used by your process by calling `process.memoryUsage().heapUsed`.
 
-By manually triggering garbage collection and checking the heap used, you can determine if you in fact observing a memory leak in your program.
+**By manually triggering garbage collection and checking the heap used, you can determine if you in fact observing a memory leak in your program.**
 
 ### Sample program
-I've created a simple memory leak program that you can see here: https://github.com/akras14/memory-leak-example
+I've created a simple memory leak program that you can see here: [https://github.com/akras14/memory-leak-example](https://github.com/akras14/memory-leak-example)
 
 You can clone it, run `npm install` and then run `node --expose-gc index.js` to see it in action.
 
@@ -115,7 +115,7 @@ The program will:
 
 If you run the program with `node --expose-gc index.js` (or `npm start`), it will begin to output memory stats. Let it run for a minute or two and kill it with `Ctr + c`.
 
-You'll see that the memory is quickly growing, even though we are triggering Garbage Collection every 2 seconds, right before we get the stats via:
+You'll see that the memory is quickly growing, even though we are triggering Garbage Collection every 2 seconds, right before we get the stats:
 
 ```JavaScript
 //1. Force garbage collection every time this function is called
@@ -131,7 +131,7 @@ var heapUsed = process.memoryUsage().heapUsed;
 console.log("Program is using " + heapUsed + " bytes of Heap.")
 ```
 
-with the stats output looking something like the following:
+With the stats output looking something like the following:
 
 ```
 Program is using 3783656 bytes of Heap.
@@ -153,11 +153,11 @@ Program is using 4207304 bytes of Heap.
 
 If your plot the data, memory growth becomes even more evident.
 
-{with-memory-leak.png}
+<a href="http://www.alexkras.com/wp-content/uploads/with-memory-leak.png" rel="attachment wp-att-1015"><img src="http://www.alexkras.com/wp-content/uploads/with-memory-leak.png" alt="with-memory-leak" width="800" height="600" class="aligncenter size-full wp-image-1015" /></a>
 
-*Note: If you curious how I've plotted the data, read on. If not please skip to the next section.*
+*Note: If you curious how I've plotted the data, read on. If not please skip to the [next section](#heapdump).*
 
-I am saving the stats being outputted into a JSON file, and then read it in and plotted it with a few lines of Python. I've kept it on a separate brunch to avoid confusion, but you can check it out here: https://github.com/akras14/memory-leak-example/tree/plot
+I am saving the stats being outputted into a JSON file, and then read it in and plotted it with a few lines of Python. I've kept it on a separate brunch to avoid confusion, but you can check it out here: [https://github.com/akras14/memory-leak-example/tree/plot](https://github.com/akras14/memory-leak-example/tree/plot)
 
 Relevant parts are:
 
@@ -224,21 +224,21 @@ process.kill(process.pid, 'SIGUSR2');
 // ---skip---
 ```
 
-I am using a node-heapdump module that you can find here: https://github.com/bnoordhuis/node-heapdump
+I am using a node-heapdump module that you can find here: [https://github.com/bnoordhuis/node-heapdump](https://github.com/bnoordhuis/node-heapdump)
 
 In order to use node-heapdump, you just have to:
 
 1. Install it.
 2. Require it at the top of your program
-3. Call `kill -USR2 <pid>` on Unix like platforms
+3. Call `kill -USR2 {{pid}}` on Unix like platforms
 
 If you've never see the `kill` part before, it's a command in Unix that allows you to (among other things) send a custom signal(aka User Signal) to any running process. Node-heapdump is configured to take a heap dump of the process, any time it receives a **user signal two** hence the `-USR2`, followed by process id.
 
-In my sample program I automate the `kill -USR2 <pid>` command by running `process.kill(process.pid, 'SIGUSR2');`, where `process.kill` is a node wrapper for `kill` command and `process.pid` gets the id for the current Node process. I run this command after each Garbage Collection to get a clean heap dump.
+In my sample program I automate the `kill -USR2 {{pid}}` command by running `process.kill(process.pid, 'SIGUSR2');`, where `process.kill` is a node wrapper for `kill` command, `SIGUSR2` is Node way of saying `-USR2`, and `process.pid` gets the id for the current Node process. I run this command after each Garbage Collection to get a clean heap dump.
 
 I don't think `process.kill(process.pid, 'SIGUSR2');` will work on Windows, but you can run `heapdump.writeSnapshot()` instead.
 
-This example might have been slightly easier with `heapdump.writeSnapshot()` in the first place, but I wanted to mention that you can trigger a heap dump with  `kill -USR2 <pid>` signal on Unix like platforms, which could come in handy.
+This example might have been slightly easier with `heapdump.writeSnapshot()` in the first place, but I wanted to mention that you can trigger a heap dump with  `kill -USR2 {{pid}}` signal on Unix like platforms, which could come in handy.
 
 Next section will cover how we can use the generated heap dumps to isolate the memory leak.
 
@@ -251,11 +251,11 @@ Once you have your heap dumps. Head over to Google Chrome, and open up Chrome De
 
 Once in the Developer Tools Navigate to "Profiles" tab, select "Load" button at the bottom of the screen, navigate to the first Heap Dump that you took, and select it. The heap dump will load into the Chrome view as follows:
 
-{1st-Heap-Dump}
+<a href="http://www.alexkras.com/wp-content/uploads/1st-Heap-Dump.png" rel="attachment wp-att-1017"><img src="http://www.alexkras.com/wp-content/uploads/1st-Heap-Dump.png" alt="1st-Heap-Dump" width="908" height="676" class="aligncenter size-full wp-image-1017" /></a>
 
-Go ahead an load 2 more heap dumps, into the view. For example you can use the last 2 heap dumps that you've taken. The most important thing is that heap dumps must be loaded in the order that they were taken. Your Profiles tab should look similar to the following.
+Go ahead an load 2 more heap dumps into the view. For example, you can use the last 2 heap dumps that you've taken. The most important thing is that heap dumps must be loaded in the order that they were taken. Your Profiles tab should look similar to the following.
 
-{3-Heap-Dumps}
+<a href="http://www.alexkras.com/wp-content/uploads/3-Heap-Dumps.png" rel="attachment wp-att-1018"><img src="http://www.alexkras.com/wp-content/uploads/3-Heap-Dumps.png" alt="3-Heap-Dumps" width="908" height="676" class="aligncenter size-full wp-image-1018" /></a>
 
 As you can tell from the above image, the Heap continues to grow a little over time.
 
@@ -264,11 +264,11 @@ Once heap dump is loaded you'll see a lot of sub-views in the Profiles tab, and 
 
 Click on the last heap dump that you have taken, it will immediately put you into the "Summary" view. To the left of the "Summary" drop down, you should see another drop down that says "All". Click on it and select "Objects allocated between heapdump-YOUR-FIRST-HEAP-DUMP and heapdump-YOUR-SECOND-TO-LAST-HEAP-DUMP", as can be see in the image bellow.
 
-{3-Heap-Dump-View}
+<a href="http://www.alexkras.com/wp-content/uploads/3-Heap-Dump-View.png" rel="attachment wp-att-1019"><img src="http://www.alexkras.com/wp-content/uploads/3-Heap-Dump-View.png" alt="3-Heap-Dump-View" width="1071" height="624" class="aligncenter size-full wp-image-1019" /></a>
 
-What it will do, is show you all of the objects that were allocated sometimes between your first heap dump, and your second to last heap dump, that are still present in your final heap dump, even though they should have been picked up by Garbage Collection.
+It will show you all of the objects that were allocated sometimes between your first heap dump and your second to last heap dump. That fact that these objects are still hanging around in your last heap dump are cause for concern and should be investigated, since they should have been picked up by Garbage Collection.
 
-Pretty amazing stuff actually, but  not very intuitive and easy to overlook.
+Pretty amazing stuff actually, but not very intuitive to find and easy to overlook.
 
 ### Ignore anything in brackets, such as (string), at least at first
 
@@ -276,25 +276,25 @@ After completing the outlined steps for the sample app, I ended up with the foll
 
 Note that the **shallow size** represents the size of the object itself, while **retained size** represents the size of the object and all of its children.
 
-{memory-leak}
+<a href="http://www.alexkras.com/wp-content/uploads/memory-leak.png" rel="attachment wp-att-1020"><img src="http://www.alexkras.com/wp-content/uploads/memory-leak.png" alt="memory-leak" width="1092" height="842" class="aligncenter size-full wp-image-1020" /></a>
 
 There appear to be 5 entries that were retained in my last snapshot that should have not been there: (array), (compiled code), (string), (system), and SimpleClass.
 
-Out of all of them only SimpleClass looks familiar, since it came from the following code in the sample app.
+Out of all of them only **SimpleClass** looks familiar, since it came from the following code in the sample app.
 
 ```JavaScript
 var randomObject = new SimpleClass(randomData);
 ```
 
-It may be tempting to start looking through the (array) or (string) entries first. All objects in Summary view are grouped by their constructor names. In case of array or string, those are constructors internal to the JavaScript engine. And while your program is most likely holding on to some data that was created through those constructors, you would also get a lot of noise there.
+It may be tempting to start looking through the (array) or (string) entries first. All objects in Summary view are grouped by their constructor names. In case of array or string, those are constructors internal to the JavaScript engine. While your program is definitely holding on to some data that was created through those constructors, you would also get a lot of noise there, making it harder to find the source of the memory leak.
 
-That is why it's much better to skip those at first, and instead to see if you can spot any more obvious suspects, such as SimpleClass constructors in the sample app.
+That is why it's much better to skip those at first, and instead to see if you can spot any more obvious suspects, such as the **SimpleClass** constructors in the sample app.
 
-Clicking on the drop down arrow in the SimpleClass constructor, and selecting any of the created objects from the resulting list, will populate the retainer path in the lower part of the window. From there it's very easy to track that the leakyData array was holding on to our data.
+Clicking on the drop down arrow in the SimpleClass constructor, and selecting any of the created objects from the resulting list, will populate the retainer path in the lower part of the window(see the image above). From there it's very easy to track that the leakyData array was holding on to our data.
 
-If you are not as fortunate in your app, as I was in my sample app, you might have to look at the internal constructors (such as strings) and try to figure out what is causing the memory leak from there. The trick there would be to try to identify groups of values that show up a lot in some of the internal constructors groups, and try to use that as a hint pointing to a suspected memory leak.
+If you are not as fortunate in your app, as I was in my sample app, you might have to look at the internal constructors (such as strings) and try to figure out what is causing the memory leak from there. In that case, the trick would be to try to identify groups of values that show up often in some of the internal constructors groups, and try to use that as a hint pointing to a suspected memory leak.
 
-For example in the sample app case, you may observe a lot of strings that looks like random numbers converted to strings. If you examine their retainer paths, Chrome Dev Tools will point you towards the leakyData array.
+For example, in the sample app case, you may observe a lot of strings that look like random numbers converted to strings. If you examine their retainer paths, Chrome Dev Tools will point you towards the leakyData array.
 
 <a name="confirm"></a>
 ## Step 4. Confirm that the issue is resolved
@@ -329,7 +329,7 @@ Program is using 3758368 bytes of Heap.
 
 And if we plot the data it would look as follows:
 
-{without-memory-leak.png}
+<a href="http://www.alexkras.com/wp-content/uploads/without-memory-leak.png" rel="attachment wp-att-1021"><img src="http://www.alexkras.com/wp-content/uploads/without-memory-leak.png" alt="without-memory-leak" width="800" height="600" class="aligncenter size-full wp-image-1021" /></a>
 
 Hooray, the memory leak is gone.
 
@@ -342,13 +342,15 @@ Hooray, the memory leak is gone.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/L3ugr9BJqIs" frameborder="0" allowfullscreen></iframe>
 
-Most of the stuff you've read in this article has been taken from the video above. The only reason this article exists, is because I had to watch this video 3 times over the course of two weeks to spot (what I believe to be) the key points, and I wanted to the discovery easier for others. I would highly recommend watching this video to supplement this post.
+Most of the stuff you've read in this article has been taken from the video above. The only reason this article exists, is because I had to watch this video 3 times over the course of two weeks to spot (what I believe to be) the key points, and I wanted to make the discovery process easier for others.
+
+I would highly recommend watching this video to supplement this post.
 
 ### Another helpful tool - memwatch-next
 
 This is another cool tool that I think is worth mentioning. You can read more about some of the reasoning for it [here](https://hacks.mozilla.org/2012/11/tracking-down-memory-leaks-in-node-js-a-node-js-holiday-season/) (short read, worth your time).
 
-Or just go straight to the repo: https://github.com/marcominetti/node-memwatch
+Or just go straight to the repo: [https://github.com/marcominetti/node-memwatch](https://github.com/marcominetti/node-memwatch)
 
 To save you a click, you can install it with `npm install memwatch-next`
 
@@ -392,7 +394,7 @@ Pretty cool.
 
 ### JavaScript Memory Profiling from developer.chrome.com
 
-https://developer.chrome.com/devtools/docs/javascript-memory-profiling
+[https://developer.chrome.com/devtools/docs/javascript-memory-profiling](https://developer.chrome.com/devtools/docs/javascript-memory-profiling)
 
 Definitely a must read. It covers all of the subjects that I've touched up on and many more, in much greater detail with much greater accuracy :)
 
@@ -400,13 +402,13 @@ Don't overlook the talk by Addy Osmani at the bottom, where he mentions a bunch 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/LaxbdIyBkL0" frameborder="0" allowfullscreen></iframe>
 
-You can get the slide here: https://speakerdeck.com/addyosmani/javascript-memory-management-masterclass and the sample code here: https://github.com/addyosmani/memory-mysteries
+You can get the slide [here](https://speakerdeck.com/addyosmani/javascript-memory-management-masterclass): and the sample code [here](https://github.com/addyosmani/memory-mysteries):
 
 <a name="summary"></a>
 ## Summary
 
 1. Trigger Garbage Collection manually when trying to reproduce and identify a memory leak. You can run Node with `--expose-gc` flag and call `global.gc()` from your program.
-2. Take at least 3 Heap Dumps using https://github.com/bnoordhuis/node-heapdump
+2. Take at least 3 Heap Dumps using [https://github.com/bnoordhuis/node-heapdump](https://github.com/bnoordhuis/node-heapdump)
 3. Use 3 heap dump method to isolate the memory leak
 4. Confirm that memory leak is gone
 5. Profit
