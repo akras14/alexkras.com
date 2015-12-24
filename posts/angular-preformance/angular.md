@@ -222,5 +222,3 @@ Also note the yellow triangle with a "!", if you however over it, it will identi
 
 
 [https://developer.chrome.com/devtools/docs/cpu-profiling](https://developer.chrome.com/devtools/docs/cpu-profiling)
-
-**Thank you for reading. Send me a shout-out on Twitter if you find an error or just to say hi:** [https://twitter.com/akras14](https://twitter.com/akras14)
