@@ -232,15 +232,15 @@ In order to use node-heapdump, you just have to:
 2. Require it at the top of your program
 3. Call `kill -USR2 <pid>` on Unix like platforms
 
-If you've never see the `kill` part before, it's a command in Unix that allows you to (among other things) send a custom signal(aka User Signal) to any running process. Node-heapdump is configured to take a Heap dump of the process, any time it receives a **user signal two** hence the `-USR2`, followed by process id.
+If you've never see the `kill` part before, it's a command in Unix that allows you to (among other things) send a custom signal(aka User Signal) to any running process. Node-heapdump is configured to take a heap dump of the process, any time it receives a **user signal two** hence the `-USR2`, followed by process id.
 
-In my sample program I automate the `kill -USR2 <pid>` command by running `process.kill(process.pid, 'SIGUSR2');`, where `process.kill` is a node wrapper for `kill` command and `process.pid` gets the id for the current Node process. I run this command after each Garbage Collection to get a clean Heap dump.
+In my sample program I automate the `kill -USR2 <pid>` command by running `process.kill(process.pid, 'SIGUSR2');`, where `process.kill` is a node wrapper for `kill` command and `process.pid` gets the id for the current Node process. I run this command after each Garbage Collection to get a clean heap dump.
 
 I don't think `process.kill(process.pid, 'SIGUSR2');` will work on Windows, but you can run `heapdump.writeSnapshot()` instead.
 
 This example might have been slightly easier with `heapdump.writeSnapshot()` in the first place, but I wanted to mention that you can trigger a heap dump with  `kill -USR2 <pid>` signal on Unix like platforms, which could come in handy.
 
-Next section will cover how we can use the generated Heap dumps to isolate the memory leak.
+Next section will cover how we can use the generated heap dumps to isolate the memory leak.
 
 <a name="find-problem"></a>
 ## Step 3. Find the problem
@@ -262,7 +262,7 @@ As you can tell from the above image, the Heap continues to grow a little over t
 ### 3 Heap Dumps Method
 Once heap dump is loaded you'll see a lot of sub-views in the Profiles tab, and it's easy to get lost in them. There is one view, however, that I found to be particularly helpful.
 
-Click on the last Heap dump that you have taken, it will immediately put you into the "Summary" view. To the left of the "Summary" drop down, you should see another drop down that says "All". Click on it and select "Objects allocated between heapdump-YOUR-FIRST-HEAP-DUMP and heapdump-YOUR-SECOND-TO-LAST-HEAP-DUMP", as can be see in the image bellow.
+Click on the last heap dump that you have taken, it will immediately put you into the "Summary" view. To the left of the "Summary" drop down, you should see another drop down that says "All". Click on it and select "Objects allocated between heapdump-YOUR-FIRST-HEAP-DUMP and heapdump-YOUR-SECOND-TO-LAST-HEAP-DUMP", as can be see in the image bellow.
 
 {3-Heap-Dump-View}
 
