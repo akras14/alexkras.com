@@ -14,7 +14,7 @@
 
 Few months ago, I had to debug a memory leak in Node.js. I found a good number of articles dedicated to the subject, but even after carefully reading some of them, I was still pretty confused on what exactly I should do to debug our problem.
 
-My intent for this post is to be a simple guide for funding a memory leak in Node. I will outline a single easy to follow approach, that should (in my opinion) be a starting point for any memory leak debugging in Node. For some cases, this approach may not be enough. I will link to some other resources that you may want to consider.
+My intent for this post is to be a simple guide for finding a memory leak in Node. I will outline a single easy to follow approach, that should (in my opinion) be a starting point for any memory leak debugging in Node. For some cases, this approach may not be enough. I will link to some other resources that you may want to consider.
 
 <a name="min-theory"></a>
 ## Minimal Theory
