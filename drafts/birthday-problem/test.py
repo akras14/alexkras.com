@@ -1,7 +1,8 @@
+#! /usr/bin/env python3
 import json, random
 
 # Load birthdays
-with open('birthdays.json') as data_file:
+with open('birthdays-smaller.json') as data_file:
   brithdayData = json.load(data_file)
 
 # Get day and month from the birthday string
@@ -35,7 +36,7 @@ def oneRun(numToSample):
 def runABatch():
   matchesFound = 0
   for i in range(0, 1000):
-    if oneRun(70) == True:
+    if oneRun(22) == True:
       matchesFound += 1
   return matchesFound*100/1000
 
