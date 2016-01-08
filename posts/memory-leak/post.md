@@ -9,6 +9,9 @@
 - [Links to some other resources](#links)
 - [Summary](#summary)
 
+<blockquote class="twitter-tweet" data-cards="hidden" lang="en"><p lang="en" dir="ltr">Something you might want to bookmark: Simple Guide to Finding a JavaScript Memory Leak in Node.js by <a href="https://twitter.com/akras14">@akras14</a> <a href="https://t.co/oRyQboa8Uw">https://t.co/oRyQboa8Uw</a></p>&mdash; Node.js (@nodejs) <a href="https://twitter.com/nodejs/status/684678799896625152">January 6, 2016</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
 <a name="intro"></a>
 ## Introduction
 
