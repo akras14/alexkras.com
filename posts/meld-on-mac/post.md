@@ -36,7 +36,6 @@ else:
   right = ""
 
 MELDPATH = "/Applications/Meld.app"
-arguments = " -n " + MELDPATH + " --args " + left + " " + right
 
 p = subprocess.call(['open', '-W', '-a',  MELDPATH, '--args', left, right])
 </pre>
