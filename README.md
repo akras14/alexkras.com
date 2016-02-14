@@ -7,7 +7,7 @@ Please visit: http://www.alexkras.com if you are trying to find the context for 
 
 ## [December 2015](http://www.alexkras.com/2015/12/)
 
-  * 24: [Simple Guide to Finding a JavaScript Memory Leak in Node.js](http://www.alexkras.com/simple-guide-to-finding-a-javascript-memory-leak-in-node-js/) (0)
+  * 24: [Simple Guide to Finding a JavaScript Memory Leak in Node.js](http://www.alexkras.com/simple-guide-to-finding-a-javascript-memory-leak-in-node-js/) (18)
   * 09: [Book Review – Automate the Boring Stuff with Python by Al Sweigart](http://www.alexkras.com/review-automate-the-boring-stuff-with-python-by-al-sweigart/) (2)
 
 ## [November 2015](http://www.alexkras.com/2015/11/)
@@ -26,16 +26,16 @@ Please visit: http://www.alexkras.com if you are trying to find the context for 
 
 ## [April 2015](http://www.alexkras.com/2015/04/)
 
-  * 28: [11 Tips to Improve AngularJS Performance](http://www.alexkras.com/11-tips-to-improve-angularjs-performance/) (31)
+  * 28: [11 Tips to Improve AngularJS Performance](http://www.alexkras.com/11-tips-to-improve-angularjs-performance/) (37)
   * 14: [Simple HTTPS Test Server Using Node.js](http://www.alexkras.com/simple-https-test-server-using-node-js/) (0)
 
 ## [March 2015](http://www.alexkras.com/2015/03/)
 
-  * 10: [Git Cheat Sheet](http://www.alexkras.com/getting-started-with-git/) (11)
+  * 10: [Git Cheat Sheet](http://www.alexkras.com/getting-started-with-git/) (12)
 
 ## [February 2015](http://www.alexkras.com/2015/02/)
 
-  * 28: [How To Run Meld on Mac OS X Yosemite Without Homebrew, MacPorts, or Think](http://www.alexkras.com/how-to-run-meld-on-mac-os-x-yosemite-without-homebrew-macports-or-think/) (42)
+  * 28: [How To Run Meld on Mac OS X Yosemite Without Homebrew, MacPorts, or Think](http://www.alexkras.com/how-to-run-meld-on-mac-os-x-yosemite-without-homebrew-macports-or-think/) (46)
 
 ## [June 2014](http://www.alexkras.com/2014/06/)
 
