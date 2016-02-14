@@ -1,16 +1,16 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3.5
 from bs4 import BeautifulSoup
-import urllib2
+from urllib.request import urlopen
 import html2text
 
-response = urllib2.urlopen('http://alexkras.com/archive/')
+response = urlopen('http://alexkras.com/archive/')
 html = response.read()
 
 data = BeautifulSoup(html, 'html.parser')
 archive = data.findAll('div', class_='clean-my-archives')[0]
 
 h = html2text.HTML2Text()
-test = unicode(str(archive), 'utf-8')
+test = str(archive)
 markdown = h.handle(test)
 
 heading = """
@@ -26,5 +26,4 @@ fo = open("README.md", "wb")
 outData = heading + markdown
 fo.write(outData.encode('utf-8'))
 fo.close()
-
 
