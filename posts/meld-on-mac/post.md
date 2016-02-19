@@ -13,7 +13,7 @@ For some reason Homebrew did not work for me on my new Mac back in February of 2
 After some intense Googling, I came across this [AWESOME fork of Meld](https://github.com/yousseb/meld/releases/tag/osx-v1). It is Meld packaged with all of the dependencies into a regular **.dmg**. You can download it, install it, and it just works.
 
 <p class="note">
-Note: I am linking to release tagged osx-v1, there have been other releases since then. Some of them did not work for all users, but the latest release suppose to fix that. You might have to try a few release to find the one that works for you. The author of of that package posts his updates in the comments sometimes, so be on a lookout for that. If all fails I recommend using version osx-v1, since it seems to work for most users.
+Note: I am linking to release tagged osx-v1, there have been other releases since then. Some of them did not work for all users, but <a href="https://github.com/yousseb/meld/releases">the latest release</a> (OSX - 3.15.2) suppose to work. You might have to try a few release to find the one that works for you. The author of of that package posts his updates in the comments sometimes, so be on a lookout for that. If all fails I recommend using version osx-v1, since it seems to work for most users.
 </p>
 
 As I said earlier, Meld.dmg "just worked" for me, except that it didn't work in the command line, and that is where I need it the most.
