@@ -2,7 +2,7 @@ I love [Meld](http://meldmerge.org/). It's is my favorite diff tool, and one of 
 
 <a href="http://www.alexkras.com/wp-content/uploads/meld.png"><img src="http://www.alexkras.com/wp-content/uploads/meld-300x81.png" alt="meld" width="300" height="81" class="alignright size-medium wp-image-648" /></a>
 
-Except, you can run Meld on Mac too. The easiest way is using [Homebrew](http://brew.sh/), via `brew install meld`. If you don't have Homebrew on your Mac yet, [it will only take a minute to install](http://brew.sh/) via one simple command, and you will probably will end up installing it anyway.
+Except, you can run Meld on Mac too. The easiest way is using [Homebrew](http://brew.sh/), via `brew install meld`. If you don't have Homebrew on your Mac yet, [it will only take a minute to install](http://brew.sh/) via one simple command, and you will probably end up installing it at some point anyway.
 
 <p class="note">
 Note: `brew install meld` will probably fail, but the error will show you the proper command to run. In February of 2016 for me that command was `brew install homebrew/gui/meld`, some people report that `brew install homebrew/x11/meld` worked for them. Just read the outputted message carefully. It will probably have to pull in a lot of dependencies so it might take a while, but it should work.
