@@ -1,4 +1,5 @@
 #! /usr/bin/env python3
+%matplotlib inline
 import json, random
 
 # Load birthdays
