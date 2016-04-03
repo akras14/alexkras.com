@@ -79,5 +79,20 @@ I've ended up with an 18Mb minimized JSON file, containing about 20,000 comments
 
 ### Analyzing the data
 
+First I looked at the distributed of comments over time. As can be seen in the two plots bellow, it looks like exponential decay, with most of the comments being made in the first two hours. First 1500 comments were made withing 10 minutes. No wonder I had a hard time making my comment to the top.
 
+{{two grapsh of time distribution}}
 
+Next I wanted to see what people were saying. I did a word cloud of most commonly used keywords, using a pretty cool python library called, as you may guess - [Word Cloud](https://github.com/amueller/word_cloud)
+
+{{Image of word cloud}}
+
+I might have picked a wrong day to do this experiment. As you can tell from the image above, most of the people responded in kind to Mark's wishtes of the new year.
+
+Finally, I've spent WAY TOO MUCH TIME trying to gain a deeper understanding for the outlier comments that did not fall under the traditional response to the wishes of a bright new year.
+
+I've started out by removing all comments that had any of the following words: "new", "family", "happ", "thank", "famy", "year", "baby" , "babi", "connect", "help", "beautiful", "pic", "max", "wish", "bless", "child", "you too", "photo", "love", "best", "cute", "daughter", "congrat", "good luck", "sweet", "hope", "nice", "amen", "same". 
+
+If some of these words look weird, is because I used stems of words, when possible. For example by removing comments that have a word "thank" in it, I was able to remove coments with the words "thank you" as well as a shorter version "thanks".
+
+After that I've ended up with  2887 "unusual" comments.
