@@ -37,7 +37,7 @@ I even tried to estimate, the rate at which people were posting replies. I've lo
 
 What I didn't realize in my estimate is that those comments were not evenly distributed in time and that I had a very small chance of being the first to comment.
 
-I knew that I was loosing my dream and I considered my options :)
+I knew that I was losing my dream and I considered my options :)
 
 I could set my script to run more often than every 60 seconds, to give myself an early warning. By doing so I would risk showing up on Facebook's radar as a spammer and it just didn't feel right for me to bombard their servers.
 
@@ -186,7 +186,7 @@ We can find the score as follows:
 
 ```python
 def findIntersection(first, second):
-    intersection = first & second               # Find a sub set of words that is present in both lists
+    intersection = set(first) & set(second)     # Find a sub set of words that is present in both lists
     intersectionLength = len(intersection)      # Words both comments have in common
     wordCount = len(first) + len(second)        # Total length of both comments
     if wordCount == 0:                          # Corner case
