@@ -210,7 +210,7 @@ Id;Label
 1;Mark, I love you
 ```
 
-I've saved all intersection in the edges.cvs file, that had the following format:
+I've saved all intersection in the edges.csv file, that had the following format:
 
 ```csv
 Source;Target;Weight;Type
