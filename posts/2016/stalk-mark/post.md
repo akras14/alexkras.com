@@ -201,7 +201,7 @@ So for our example above:
 2. Total length of both comments is 5 words
 3. Intersection score is 2/5 = 0.4
 
-*Note: I could have used average length of two comments (so 2+3/2 = 2.5) instead of total length (5), but it would not have made any difference since the score was calculated similarly for all of the comments . So I decided to keep it simple.*
+*Note: I could have used average length of two comments (so (2+3)/2 = 2.5) instead of total length (5), but it would not have made any difference since the score was calculated similarly for all of the comments . So I decided to keep it simple.*
 
 Once I had all of intersection calculated I saved all comments in the nodes.csv file, that had the following format: 
 
