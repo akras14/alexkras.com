@@ -1,3 +1,6 @@
 [submodule "posts/memory-leak/memory-leak-example"]
 	path = posts/memory-leak/memory-leak-example
 	url = https://github.com/akras14/memory-leak-example.git
+[submodule "posts/2016/header-invalid-chars/validate-http-headers"]
+	path = posts/2016/header-invalid-chars/validate-http-headers
+	url = https://github.com/akras14/validate-http-headers.git
