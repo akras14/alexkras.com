@@ -7,12 +7,13 @@ Please visit: http://www.alexkras.com if you are trying to find the context for 
 
 ## [April 2016](http://www.alexkras.com/2016/04/)
 
-  * 04: [I Tried To Virtually Stalk Mark Zuckerberg](http://www.alexkras.com/i-tried-to-virtually-stalk-mark-zuckerberg/) (0)
+  * 08: [TypeError – The Header Content Contains Invalid Characters](http://www.alexkras.com/typeerror-the-header-content-contains-invalid-characters/) (0)
+  * 04: [I Tried To Virtually Stalk Mark Zuckerberg](http://www.alexkras.com/i-tried-to-virtually-stalk-mark-zuckerberg/) (29)
 
 ## [December 2015](http://www.alexkras.com/2015/12/)
 
   * 24: [Simple Guide to Finding a JavaScript Memory Leak in Node.js](http://www.alexkras.com/simple-guide-to-finding-a-javascript-memory-leak-in-node-js/) (20)
-  * 09: [Book Review – Automate the Boring Stuff with Python by Al Sweigart](http://www.alexkras.com/review-automate-the-boring-stuff-with-python-by-al-sweigart/) (3)
+  * 09: [Book Review – Automate the Boring Stuff with Python by Al Sweigart](http://www.alexkras.com/review-automate-the-boring-stuff-with-python-by-al-sweigart/) (4)
 
 ## [November 2015](http://www.alexkras.com/2015/11/)
 
@@ -30,7 +31,7 @@ Please visit: http://www.alexkras.com if you are trying to find the context for 
 
 ## [April 2015](http://www.alexkras.com/2015/04/)
 
-  * 28: [11 Tips to Improve AngularJS Performance](http://www.alexkras.com/11-tips-to-improve-angularjs-performance/) (41)
+  * 28: [11 Tips to Improve AngularJS Performance](http://www.alexkras.com/11-tips-to-improve-angularjs-performance/) (42)
   * 14: [Simple HTTPS Test Server Using Node.js](http://www.alexkras.com/simple-https-test-server-using-node-js/) (0)
 
 ## [March 2015](http://www.alexkras.com/2015/03/)
