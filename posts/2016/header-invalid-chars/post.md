@@ -1,4 +1,4 @@
-Few weeks ago our production code started to throw a weird error, that looked like this:
+A few weeks ago our production code started to throw a weird error, that looked like this:
 
 ```
 _http_outgoing.js:351
@@ -27,9 +27,9 @@ TLDR; version is as follows:
 2. `Accept-Encoding` - is the header **name**
 3. `gzip,deflate` - is the header **value**
 4. Only some characters are allowed in the header value (mostly English ASCII)
-5. Even less characters are allows in the header key
+5. Even less characters are allows in the header name
 
-An unwanted consequence of this update is that a lot of various node projects (that did not follow the spec, but that used to work just fine) all of the sudden broke.
+An unwanted consequence of this update is that various node projects (that did not follow the spec, but that used to work just fine) all of the sudden broke.
 
 ## What to do about it
 
@@ -42,9 +42,9 @@ There could be 2 reasons for you to see this error:
 
 If one of your project's dependencies did not comply with the spec, chances are they already have a fix in place.
 
-Simply update to the latest version, and it should solve the problem.
+Simply update to the latest version and it should solve the problem.
 
-If the dependency does not have a fix yet, all you can do is file an issue and hope that they can resolve it soon.
+If the dependency does not have a fix yet, all you can do is file an issue and hope that they will resolve it soon.
 
 ### Case 2
 
@@ -66,26 +66,26 @@ The demo repo has 2 important files:
 
 If you look at the [rules.js](https://github.com/akras14/validate-http-header/blob/master/rules.js) file you will see that it exports 4 functions:
 
-- For header name
+- For the header name
     - **validHeaderName** - Accepts a header name and returns true if header name is valid
     - **cleanHeaderName** - Accepts a header name and returns a valid header name, removing unwanted characters
-- For header value
+- For the header value
     - **validHeaderValue** - Accepts a header value and returns true if header value is valid
     - **cleanHeaderValue** - Accepts a header value and returns a valid header value, removing unwanted characters
 
-The two **validate** functions (`checkInvalidHeaderChar` and `checkIsHttpToken`) were copy/pasted from [the node source](https://github.com/nodejs/node/blob/master/lib/_http_common.js).
+The two **validate** functions validHeaderName and validHeaderValue are using copy/pasted `checkInvalidHeaderChar` and `checkIsHttpToken` from [the node source](https://github.com/nodejs/node/blob/master/lib/_http_common.js).
 
 **These functions will need to be updated as the Node implementation changes.**
 
 The **clean** functions used the same logic as the **validate** functions, but instead of simply returning true or false, they return a new header name or value with unwanted characters removed.
 
-It may be helpful to look at the [test file rules.js](https://github.com/akras14/validate-http-header/blob/master/test/rules.test.js) too see some examples of valid and invalid headers.
+It may be helpful to look at the [test file for rules.js](https://github.com/akras14/validate-http-header/blob/master/test/rules.test.js) too see some examples of valid and invalid headers.
 
 ### example.js
 
 In [example.js](https://github.com/akras14/validate-http-header/blob/master/example.js) you can see a sample implementation of how you might want to hook something like rules.js into your own code.
 
-It's a module that exports only one function called **cleanHeaders**, which accepts http headers represented as a JavaScript object, and goes through every header key and value, removing unwanted characters.
+It's a module that exports only one function called **cleanHeaders**, which accepts http headers represented as a JavaScript object, and goes through every header name(key) and value, removing unwanted characters.
 
 You can check out the [test file for example.js](https://github.com/akras14/validate-http-header/blob/master/test/example.test.js) to see how it works. But it will boil down to something like this:
 
