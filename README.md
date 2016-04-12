@@ -7,8 +7,9 @@ Please visit: http://www.alexkras.com if you are trying to find the context for 
 
 ## [April 2016](http://www.alexkras.com/2016/04/)
 
+  * 12: [Dead Simple JavaScript Next Boilerplate](http://www.alexkras.com/dead-simple-javascript-next-boilerplate/) (0)
   * 08: [TypeError – The Header Content Contains Invalid Characters](http://www.alexkras.com/typeerror-the-header-content-contains-invalid-characters/) (0)
-  * 04: [I Tried To Virtually Stalk Mark Zuckerberg](http://www.alexkras.com/i-tried-to-virtually-stalk-mark-zuckerberg/) (29)
+  * 04: [I Tried To Virtually Stalk Mark Zuckerberg](http://www.alexkras.com/i-tried-to-virtually-stalk-mark-zuckerberg/) (32)
 
 ## [December 2015](http://www.alexkras.com/2015/12/)
 
