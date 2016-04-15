@@ -5,24 +5,40 @@ If you are completely new to git, I suggest reading [Git Cheat Sheet](http://www
 **Table of Contexts:**
 
 1. [Parameters for better logging](#git-log)
+`git log --oneline --graph`
 2. [Log actual changes in a file](#search-log)
+`git log -p filename`
 3. [Only Log changes for some specific lines in file](#log-lines)
+`git log -L 1,1:some-file.txt`
 4. [Log changes not yet merged to the parent branch](#log-not-merged)
+`git log --no-merges master..`
 5. [Extract a file from another branch](#extract-file)
+`git show some-branch:some-file.js`
 6. [Some notes on rebasing](#pull-rebase)
+`git pull --rebase`
 7. [Remember the branch structure after a local merge](#no-fast-forward)
+`git merge --no-ff`
 8. [Fix your previous commit, instead of making a new commit](#ammend-commit)
+`git commit --amend`
 9. [Three stages in git, and how to move between them](#stages)
+`git reset --hard HEAD` and `git status -s`
 10. [Revert a commit, softly](#soft-revert)
+`git revert -n`
 11. [See diff-erence for the entire project (not just one file at a time) in a 3rd party diff tool](#folder-diff)
+`git difftool -d`
 12. [Ignore the white space](#ignore-white-space)
+`git diff -w`
 13. [Only "add" some changes from a file](#selective-add)
+`git add -p`
 14. [Discover and zap those old branches](#find-old-branches)
+`git branch -a`
 15. [Stash only some files](#selective-stash)
+`git stash -p`
 16. [Good commit messages](#good-commit-message)
 17. [Git Auto-completion](#auto-complete)
 18. [Create aliases for your most frequently used commands](#aliases)
 19. [Quickly find a commit that broke your feature (EXTRA AWESOME)](#git-bisect)
+`git bisect`
 
 <a name="git-log"></a>
 ## 1. Parameters for better logging
