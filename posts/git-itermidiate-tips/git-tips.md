@@ -361,7 +361,7 @@ Another alternative, is good old Bash alias.
 
 For example, I have the following entry in my .bashrc file.
 
-`alias gil=”git log –online –graph”`, allowing me to use `gil` instead of the long command,which is even 2 character shorter than having to type `git l` :).
+`alias gil=”git log --oneline --graph”`, allowing me to use `gil` instead of the long command,which is even 2 character shorter than having to type `git l` :).
 
 <a name="git-bisect"></a>
 ## 19. Quickly find a commit that broke your feature (EXTRA AWESOME)
