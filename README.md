@@ -7,9 +7,10 @@ Please visit: http://www.alexkras.com if you are trying to find the context for 
 
 ## [April 2016](http://www.alexkras.com/2016/04/)
 
+  * 28: [What is the best part about being a Software Engineer?](http://www.alexkras.com/what-is-the-best-part-about-being-a-software-engineer/) (0)
   * 12: [Dead Simple JavaScript Next Boilerplate](http://www.alexkras.com/dead-simple-javascript-next-boilerplate/) (0)
   * 08: [TypeError – The Header Content Contains Invalid Characters](http://www.alexkras.com/typeerror-the-header-content-contains-invalid-characters/) (0)
-  * 04: [I Tried To Virtually Stalk Mark Zuckerberg](http://www.alexkras.com/i-tried-to-virtually-stalk-mark-zuckerberg/) (32)
+  * 04: [I Tried To Virtually Stalk Mark Zuckerberg](http://www.alexkras.com/i-tried-to-virtually-stalk-mark-zuckerberg/) (36)
 
 ## [December 2015](http://www.alexkras.com/2015/12/)
 
@@ -18,7 +19,7 @@ Please visit: http://www.alexkras.com if you are trying to find the context for 
 
 ## [November 2015](http://www.alexkras.com/2015/11/)
 
-  * 28: [Using Code Snippets to Test, Save and Reuse JavaScript Code in Chrome Developer Tools](http://www.alexkras.com/using-code-snippets-to-test-save-and-reuse-javascript-code-in-chrome-developer-tools/) (1)
+  * 28: [Using Code Snippets to Test, Save and Reuse JavaScript Code in Chrome Developer Tools](http://www.alexkras.com/using-code-snippets-to-test-save-and-reuse-javascript-code-in-chrome-developer-tools/) (3)
   * 20: [Inspecting Nested Scope in Angularjs](http://www.alexkras.com/debugging-nested-scope-in-angularjs/) (3)
 
 ## [October 2015](http://www.alexkras.com/2015/10/)
@@ -28,7 +29,7 @@ Please visit: http://www.alexkras.com if you are trying to find the context for 
 ## [September 2015](http://www.alexkras.com/2015/09/)
 
   * 12: [Notes from 2015 WebRTC Conference Co-Hosted by Google](http://www.alexkras.com/notes-from-2015-webrtc-show-organized-by-krankygeek-and-hosted-by-google/) (3)
-  * 08: [19 Tips For Everyday Git Use](http://www.alexkras.com/19-git-tips-for-everyday-use/) (25)
+  * 08: [19 Tips For Everyday Git Use](http://www.alexkras.com/19-git-tips-for-everyday-use/) (41)
 
 ## [April 2015](http://www.alexkras.com/2015/04/)
 
@@ -37,15 +38,15 @@ Please visit: http://www.alexkras.com if you are trying to find the context for 
 
 ## [March 2015](http://www.alexkras.com/2015/03/)
 
-  * 10: [Git Cheat Sheet](http://www.alexkras.com/getting-started-with-git/) (13)
+  * 10: [Git Cheat Sheet](http://www.alexkras.com/getting-started-with-git/) (14)
 
 ## [February 2015](http://www.alexkras.com/2015/02/)
 
-  * 28: [How To Run Meld on Mac OS X Yosemite Without Homebrew, MacPorts, or Think](http://www.alexkras.com/how-to-run-meld-on-mac-os-x-yosemite-without-homebrew-macports-or-think/) (52)
+  * 28: [How To Run Meld on Mac OS X Yosemite Without Homebrew, MacPorts, or Think](http://www.alexkras.com/how-to-run-meld-on-mac-os-x-yosemite-without-homebrew-macports-or-think/) (54)
 
 ## [June 2014](http://www.alexkras.com/2014/06/)
 
-  * 28: [Summary of Maintainable JavaScript Talk by Nicholas C. Zakas](http://www.alexkras.com/summary-of-maintainable-javascript/) (12)
+  * 28: [Summary of Maintainable JavaScript Talk by Nicholas C. Zakas](http://www.alexkras.com/summary-of-maintainable-javascript/) (7)
   * 27: [Batch Rename Files in Unix Command Line](http://www.alexkras.com/batch-rename-files-in-unix-command-line/) (1)
   * 03: [Easy Way to Run JavaScript Tests On Multiple Browsers Using Free Tools](http://www.alexkras.com/easy-way-to-run-javascript-tests-on-multiple-browsers-using-free-tools/) (0)
 
