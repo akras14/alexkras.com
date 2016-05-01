@@ -11,7 +11,7 @@ That is why I wanted to write down a list of things that I believe are great abo
 	- Location - Software Engineers are able to find employment almost anywhere
 	- Impact - Sky is the limit, you can literally change the world
 	- Reach - Products are used by millions of people
-	- Options - Many paths to peruse, choose your own adventure
+	- Options - Many paths to pursue, choose your own adventure
 	- Demand - Shortage of Software Engineers is probably here to stay for the next 10+ years 
 	- Business - Easy to start your own service or product business
 - Learning
