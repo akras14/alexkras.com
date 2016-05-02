@@ -56,7 +56,7 @@ Chances are, by now you've used git log. It supports a number of command line pa
 
 For example, I once had a manager who required weekly reports submitted each Friday. So every Friday I would just run: `git log --author="Alex Kras" --after="1 week ago" --oneline`, edit it a little and send it in to the manager for review.
 
-Git has a lot more command line parameters that are handy. Just run `man git log` and see what it can do for you.
+Git has a lot more command line parameters that are handy. Just run `man git-log` and see what it can do for you.
 
 If everything else fails, git has a `--pretty` parameter that let's you create a highly customizable output.
 
@@ -305,7 +305,7 @@ Unfortunately, there is no easy way (that I know of) to only show merged branche
 ## 15. Stash only some files
 **Sample** `git stash —keep-index` or `git stash -p`
 
-If you don't yet know what `git stash` does, it simply puts all your unsaved changes on a "git stack" of sorts. Then at a later time you can do `git stash pop` and your changes will be re-applied. You can also do `git stash list` to see all your stashed changes. Take a look at `man git stash` for more options.
+If you don't yet know what `git stash` does, it simply puts all your unsaved changes on a "git stack" of sorts. Then at a later time you can do `git stash pop` and your changes will be re-applied. You can also do `git stash list` to see all your stashed changes. Take a look at `man git-stash` for more options.
 
 One limitation of regular `git stash` is that it will stash all of the files at once. And sometimes it is handy to only stash some of the file, and keep the rest in your working tree.
 
