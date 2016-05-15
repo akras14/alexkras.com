@@ -2,7 +2,7 @@ I've been using git full time for the past 4 years, and I wanted to share the mo
 
 If you are completely new to git, I suggest reading [Git Cheat Sheet](http://www.alexkras.com/getting-started-with-git/) first. This article is aimed at somebody who has been using git for three months or more.
 
-**Table of Contexts:**
+**Table of Contents:**
 
 1. [Parameters for better logging](#git-log)
 `git log --oneline --graph`
