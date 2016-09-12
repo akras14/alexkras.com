@@ -1,4 +1,4 @@
-<a href="http://www.alexkras.com/wp-content/uploads/mark-hn.png"><img src="http://www.alexkras.com/wp-content/uploads/mark-hn.png" alt="mark-hn" width="250" class="alignright wp-image-1185" /></a>First, let me establish some credability.
+<a href="http://www.alexkras.com/wp-content/uploads/mark-hn.png"><img src="http://www.alexkras.com/wp-content/uploads/mark-hn.png" alt="mark-hn" width="250" class="alignright wp-image-1185" /></a>First, let me establish some credibility.
 
 In the past year a few of my posts made it to the front page of Hacker News, including:
 
@@ -12,10 +12,9 @@ I am pretty sure I am not alone in this situation, so I wanted to share some of 
 
 ## 1. Write Quality Content
 
-This may seem like common sense, but there is just no substitute for it. **Quality Content is what matters**
-. No tips or tricks will replace writing something interesting or helpful.
+This may seem like common sense, but there is just no substitute for it. **Quality Content is what matters**. No tips or tricks will replace writing something interesting or helpful.
 
-My first post to make it to the front page of Hacker News  - [I Tried to Virtually Stalk Mark Zuckerberg ](http://www.alexkras.com/i-tried-to-virtually-stalk-mark-zuckerberg/) - was definitely one of the best articles that I've ever written. I started working on it in late December of 2016, and did not publish it until April of 2017. So it took me about 4 months to put it together.
+My first post to make it to the front page of Hacker News  - [I Tried to Virtually Stalk Mark Zuckerberg ](http://www.alexkras.com/i-tried-to-virtually-stalk-mark-zuckerberg/) - was definitely one of the best articles that I've ever written. I started working on it in late December of 2015 and did not publish it until April of 2016. So it took me about 4 months to put it together.
 
 I took my time to scrape the data, analyze it, and present my findings in an easy-to-digest way. I worked on it (an hour here and there) for many days. Eventually I disappeared into a coffee shop on a Sunday afternoon and finally published and submitted the article to Hacker News later that night. **And that is when the magic happened.** 
 
@@ -33,7 +32,7 @@ I submitted the article around 9 pm Pacific Standard Time on a Sunday night and 
 
 About a month after the submission I came across this article - [Best Time to Post (to HN)? It’s Irrelevant](https://antontarasenko.com/2015/04/23/best-time-to-post-its-irrelevant/). While the article concludes that the time of submission to Hacker News is "irrelevant", I tend to disagree.
 
-The number of submissions goes down during weekends and after the business hours (US). The number of readers is likely to go down as well, but there are still a lot of people reading Hacker News all over the world. Most importantly, an upvote from Mumbai, India, is just as important as an upvote from San Francisco, California. 
+The number of submissions goes down during weekends and after the business hours (US). The number of readers is likely to go down as well, but there are still a lot of people reading Hacker News all over the world.
 
 In my experience, all else being equal, submitting during the off hours has increased my odds.
 
@@ -51,9 +50,9 @@ That is not to say that articles about Angular JS have no value. I've submitted 
 
 ## 4. First 30 Minutes Decide Everything
 
-First 30 minutes that your article appears on [https://news.ycombinator.com/newest](https://news.ycombinator.com/newest) is your chance to shine. In that time, you article needs to get at least 4 upvotes from different users on different IPs, that saw your article at [https://news.ycombinator.com/newest](https://news.ycombinator.com/newest) ( and not via the direct link - [source](http://alexstechthoughts.com/post/29406022580/how-to-get-on-the-frontpage-of-hacker-news)) in order for Hacker News to start showing it to the larger audience. 
+First 30 minutes that your article appears on [https://news.ycombinator.com/newest](https://news.ycombinator.com/newest) is your chance to shine. In that time, you article needs to get at least 4 upvotes from different users on different IPs, that saw your article at [https://news.ycombinator.com/newest](https://news.ycombinator.com/newest) ( and not via a direct link - [source](http://alexstechthoughts.com/post/29406022580/how-to-get-on-the-frontpage-of-hacker-news)) in order for Hacker News to start showing it to the larger audience. 
 
-**You must do everything in you power to get as many people as possible to read (and hopefully like) your article.**
+**You must do everything in your power to get as many people as possible to read (and hopefully like) your article.**
 
 ### Headline Matters!
 
@@ -74,7 +73,7 @@ We are all so overwhelmed with information, that we don't have enough attention 
 
 On Hacker news such signals come in 5 forms:
 
-- Position on the First Page (irrelevant to new articles) 
+- Position on the First Page (irrelevant for new articles) 
 - Number of upvotes
 - Number of comments
 - Rate of upvotes (i.e. 200 upovtes / in 2 hour)
@@ -96,6 +95,6 @@ While Hacker News [appears to be](http://alexstechthoughts.com/post/29406022580/
 
 Last but not least, Hacker News has no limit on how many times an article can be submitted. If your article did not take off on the first try, don't be afraid to re-submit. 
 
-It may feel a bit too "self promotional" to keep re-posting your article. I would encourage you to fight that feeling. Since you invested your time into writing a good, helpful article, there is not shame it trying put it in front of of the people who will benefit from it. 
+It may feel a bit too "self promotional" to keep re-posting your article. I would encourage you to fight that feeling. Since you invested your time into writing a good, helpful article, there is not shame it trying put it in front of the people who will benefit from it. 
 
 If anything, once your article finally makes it to the front page of Hacker News, many people will thank you for it.
