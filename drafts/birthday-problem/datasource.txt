@@ -1,0 +1,5 @@
+Text file from: http://www.imdb.com/interfaces
+
+Then get the ftp://ftp.fu-berlin.de/pub/misc/movies/database/biographies.list.gz
+
+TODO check structuree when on WIFI
