@@ -1,20 +1,42 @@
 <html>
-    <head>
-        <style>
-            [v-cloak] {
-                display: none;
-            }
-        </style>
-        <script src="node_modules/vue/dist/vue.min.js"></script>
-        <script src="app.js"></script>        
-    </head>
-    <body>
-        <div id="app" v-cloak>
-            <ul v-if="birthdays.length > 0">
-                <li v-for="bd in birthdays">
-                {{ bd.name }}
-                </li>
-            </ul>
+
+<head>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+    <script src="node_modules/vue/dist/vue.min.js"></script>
+    <script src="app.js"></script>
+</head>
+
+<body>
+    <div id="app" v-cloak class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <select v-model="sampleSize" v-on:change="reSample">
+                    <option selected>15</option>
+                    <option>20</option>
+                    <option>49</option>
+                </select>
+                <span>Selected: {{ sampleSize }}</span>
+                <div>
+                    <ul v-if="matches.length > 0">
+                        test
+                        <li v-for="match in matches">
+                            {{match.name}} - {{match.bd}}
+                        </li>
+                    </ul> 
+                </div>
+                <ul v-if="birthdays.length > 0">
+                    <li v-for="bd in birthdays">
+                        {{ bd.name }}
+                    </li>
+                </ul>
+            </div>
         </div>
-    </body>
+    </div>
+</body>
+
 </html>
