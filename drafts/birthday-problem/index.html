@@ -8,6 +8,7 @@
         }
     </style>
     <script src="node_modules/vue/dist/vue.min.js"></script>
+    <script src="node_modules/lodash/lodash.min.js"></script>
     <script src="app.js"></script>
 </head>
 
@@ -17,15 +18,15 @@
             <div class="col-sm-12">
                 <select v-model="sampleSize" v-on:change="reSample">
                     <option selected>15</option>
-                    <option>20</option>
-                    <option>49</option>
+                    <option>23</option>
+                    <option>70</option>
                 </select>
                 <span>Selected: {{ sampleSize }}</span>
                 <div>
                     <ul v-if="matches.length > 0">
                         test
                         <li v-for="match in matches">
-                            {{match.name}} - {{match.bd}}
+                            {{match.name}} - {{match.db}}
                         </li>
                     </ul> 
                 </div>

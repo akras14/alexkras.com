@@ -17,6 +17,18 @@
         }
         return randomActors;
     }
+    function getBirthdayMatch(birthdays){
+        var matches = [];
+        birthdays.forEach(bd => {
+            var result = birthdays.filter(test => {
+                return getDayAndMonth(bd.db) === getDayAndMonth(test.db);
+            });
+            if(result.length > 1) {
+                matches = _.union(matches, result);
+            }
+        });
+        return matches;
+    }
     var birthdayData = [];
     var vm;
     function setUpView(){
@@ -24,7 +36,8 @@
             el: '#app',
             data: {
                 birthdays: getRandomSample(15),
-                sampleSize: null
+                sampleSize: null,
+                matches: []
             },
             beforeCompile: function(){
                 
@@ -32,7 +45,8 @@
             methods: {
                 reSample: function(){
                     var sampleSize = Number.parseInt(vm.sampleSize, 10);
-                    vm.$set('birthdays', getRandomSample(sampleSize)); 
+                    vm.$set('birthdays', getRandomSample(sampleSize));
+                    vm.$set('matches', getBirthdayMatch(vm.birthdays));
                 }
             }
         });
