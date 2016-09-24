@@ -17,7 +17,9 @@
             .then(json => birthdayData = json)
             .then(reSample);
 
+
         function reSample(){
+            console.log("IN resample")
             var sampleSize = Number.parseInt(ba.selected, 10);
             ba.birthdays = getRandomSample(birthdayData, sampleSize);
             ba.matches = getBirthdayMatch(ba.birthdays);
@@ -36,7 +38,8 @@
         var randomActors = [];
         for(var i = 0; i < numToSample; i++){
             var bdId = getRandomInt(bdCount);
-            var bd = birthdayData[bdId];
+            var bd = angular.copy(birthdayData[bdId]);
+            bd.id = bdId;
             randomActors.push(bd);
         }
         return randomActors;
