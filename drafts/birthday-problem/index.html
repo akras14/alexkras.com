@@ -11,11 +11,13 @@
         }
         table th,td {
             border: 1px solid lightgrey;
-            width: 50%;
         }
         .actors {
             max-height: 80%;
             overflow: scroll;
+        }
+        .results td {
+            width: 50%;
         }
     </style>
     <script src="node_modules/angular/angular.min.js"></script>
@@ -41,6 +43,10 @@
                             {{option}}
                         </label>
                     </span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
                     <button class="btn btn-primary" ng-click="ba.reSample()">Try Again</button>
                 </div>
             </div>
@@ -52,7 +58,7 @@
                         </div>
                         <div ng-if="ba.matches.length > 0">
                             <h3>Matches Found</h3>
-                            <table>
+                            <table class="result">
                                 <tr>
                                     <th>Name</th>
                                     <th>Birthday</th>
