@@ -3,41 +3,52 @@
 <head>
     <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css" />
     <style>
-        [v-cloak] {
+        [ng-cloak] {
             display: none;
         }
     </style>
-    <script src="node_modules/vue/dist/vue.min.js"></script>
+    <script src="node_modules/angular/angular.min.js"></script>
     <script src="node_modules/lodash/lodash.min.js"></script>
     <script src="app.js"></script>
 </head>
 
-<body>
-    <div id="app" v-cloak class="container">
-        <div class="row">
-            <div class="col-sm-12">
-                <select v-model="sampleSize" v-on:change="reSample">
-                    <option selected>15</option>
-                    <option>23</option>
-                    <option>70</option>
-                </select>
-                <span>Selected: {{ sampleSize }}</span>
-                <div>
-                    <ul v-if="matches.length > 0">
-                        test
-                        <li v-for="match in matches">
-                            {{match.name}} - {{match.db}}
-                        </li>
-                    </ul> 
+<body ng-app="birthdayApp">
+    <birthday-app></birthday-app>
+    <script type="text/ng-template" id="birthday-app.component.html">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <select 
+                        ng-model="ba.selected"
+                        ng-options="option for option in ba.options"
+                        ng-change="ba.reSample()"
+                    ></select>
+                    <button class="btn btn-default" ng-click="ba.reSample()">Try Again</button>
+                    <div>
+                        <div ng-if="ba.matches.length === 0">
+                            <h3>No Matches Found</h3>
+                        </div>
+                        <div ng-if="ba.matches.length > 0">
+                            <h3>Matches Found</h3>
+                            <ul>
+                                <li ng-repeat="match in ba.matches track by $index">
+                                    {{match.name}} - {{match.db}}
+                                </li>
+                            </ul> 
+                        </div>
+                    </div>
+                    <div>
+                        <h3>Out of {{ ba.selected }} actors</h3>
+                        <ul ng-if="ba.birthdays.length > 0">
+                            <li ng-repeat="bd in ba.birthdays track by $index">
+                                {{ bd.name }}
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <ul v-if="birthdays.length > 0">
-                    <li v-for="bd in birthdays">
-                        {{ bd.name }}
-                    </li>
-                </ul>
             </div>
         </div>
-    </div>
+    </script>
 </body>
 
 </html>

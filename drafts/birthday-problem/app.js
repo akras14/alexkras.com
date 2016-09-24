@@ -1,4 +1,28 @@
 (function () {
+    angular.module('birthdayApp', [])
+        .component('birthdayApp', {
+            templateUrl: 'birthday-app.component.html',
+            controller: BirthdayAppController,
+            controllerAs: "ba"
+        });
+    BirthdayAppController.$inject = ['$http'];
+    function BirthdayAppController($http){
+        var ba = this;
+        ba.options = ["23", "70"];
+        ba.selected = ba.options[0];
+        ba.reSample = reSample;
+        var birthdayData = [];
+        $http.get("birthdays-smaller.json")
+            .then(res => res.data)
+            .then(json => birthdayData = json)
+            .then(reSample);
+
+        function reSample(){
+            var sampleSize = Number.parseInt(ba.selected, 10);
+            ba.birthdays = getRandomSample(birthdayData, sampleSize);
+            ba.matches = getBirthdayMatch(ba.birthdays);
+        }
+    }
     function getRandomInt(max) {
         if(typeof max === "undefined" ) throw new Error("Max is required");
         max = Math.floor(max);
@@ -7,7 +31,7 @@
     function getDayAndMonth(birthday) {
         return birthday.split(" ").splice(0, 2).join(" ")
     }
-    function getRandomSample(numToSample){
+    function getRandomSample(birthdayData, numToSample){
         var bdCount = birthdayData.length;
         var randomActors = [];
         for(var i = 0; i < numToSample; i++){
@@ -28,34 +52,5 @@
             }
         });
         return matches;
-    }
-    var birthdayData = [];
-    var vm;
-    function setUpView(){
-        vm = new Vue({
-            el: '#app',
-            data: {
-                birthdays: getRandomSample(15),
-                sampleSize: null,
-                matches: []
-            },
-            beforeCompile: function(){
-                
-            },
-            methods: {
-                reSample: function(){
-                    var sampleSize = Number.parseInt(vm.sampleSize, 10);
-                    vm.$set('birthdays', getRandomSample(sampleSize));
-                    vm.$set('matches', getBirthdayMatch(vm.birthdays));
-                }
-            }
-        });
-    }
-    setTimeout(function(){
-        fetch("birthdays-smaller.json")
-                    .then(res => res.json())
-                    .then(json => birthdayData = json)
-                    .then(setUpView)
-                    .then(() => vm.reSample());
-    }, 100)    
+    }   
 })();
