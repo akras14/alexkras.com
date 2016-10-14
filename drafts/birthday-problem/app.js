@@ -19,7 +19,6 @@
 
 
         function reSample(){
-            console.log("IN resample")
             var sampleSize = Number.parseInt(ba.selected, 10);
             ba.birthdays = getRandomSample(birthdayData, sampleSize);
             ba.matches = getBirthdayMatch(ba.birthdays);

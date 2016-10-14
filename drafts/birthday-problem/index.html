@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css" />
     <style>
         body {
-            padding-top: 20px;
+            padding-top: 20px;       
         }
         table {
             width: 100%;
@@ -19,8 +19,28 @@
         .results td {
             width: 50%;
         }
+.ng-move,
+.ng-enter,
+.ng-leave {
+  transition:all linear 0.1s;
+}
+
+.ng-leave.ng-leave-active,
+.ng-move,
+.ng-enter {
+  opacity:0;
+  max-height:0;
+}
+
+.ng-leave,
+.ng-move.ng-move-active,
+.ng-enter.ng-enter-active {
+  opacity:1;
+  max-height:30px;
+}
     </style>
     <script src="node_modules/angular/angular.min.js"></script>
+    <!--<script src="node_modules/angular-animate/angular-animate.min.js"></script>-->
     <script src="node_modules/lodash/lodash.min.js"></script>
     <script src="app.js"></script>
 </head>
