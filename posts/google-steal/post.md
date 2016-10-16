@@ -2,6 +2,7 @@
 title: Google May Be Stealing Your Mobile Traffic
 ...
 
+I'll get to the bottom of my accusation in a little bit, but first please allow me to set up some framework.
 
 ## Accelerated Mobile Pages
 Have you heard of Accelerated Mobile Pages (AMP)? It's a newish open source project that Google launched in the February of 2016.
@@ -80,7 +81,7 @@ I think Richard Gingras, Head of News at Google, said it best and I quote: "[Let
 
 ![](./great-again.png)
 
-Unfortunately in the process of fixing the Web, Google broke something else. It used to work like this:
+Unfortunately, in the process of fixing the Web, Google broke something else. It used to work like this:
 
 1. Search Google 
 1. Find interesting result 
@@ -96,7 +97,7 @@ Now it works like this:
 
 The web used to be the place where anybody could publish quality content, help thousands of people, and earn a few dollars along the way. Google Adsense was one of the main products that made this reality possible.
 
-A lot of authors hope that people would find their content useful, stay for a while and come back in the future. None of this will work, if readers are not able to get to the site in the first place.
+A lot of authors hope that people would find their content useful, stay for a while and come back in the future. None of this will work if readers are not able to get to the site in the first place.
 
 In addition, given the wide spread of Ad Blocking software, mobile platform remains one of few places where ad revenue continues to be a viable option.
 
@@ -110,7 +111,7 @@ Google could change the close button to take users to the original site. Alterna
 
 ### Make sure your AMP content is optimized for the new deal
 
-I think it is important to point out that Google **is** playing by the AMP rules. My main concern is that a lot of people (like myself a week ago) do not yet realize that AMP search results are being treated differently from other search results. 
+I think it is important to point out that Google **is** playing by the AMP rules. My main concern is that a lot of people (like myself a week ago) have yet to realize that AMP search results are being treated differently from other search results. 
 
 In other words, Google is playing by the rules, but the rules have changed.
 
@@ -130,9 +131,9 @@ That being said, Google allows AMP sites to display whatever content they like, 
 
 ## Conclusion
 
-I hope I am not being too hard on Google. I get it. Real innovations is hard. It takes courage. No one can get everything right on the first try and it's easy to overlook some details. Since AMP is an open source project, I assume my feedback is welcomed.
+I hope I am not being too hard on Google. I get it. Real innovation is hard. It takes courage. No one can get everything right on the first try and it's easy to overlook some details. Since AMP is an open source project, I assume my feedback is welcomed.
 
-That being said, it's the people, millions of author who take their time to write and billions of readers who take their time to read, comment and share that make the Web great.
+That being said, it's the people, millions of authors who take their time to write and billions of readers who take their time to read, comment and share that make the Web great.
 
 Google is improving things for the mobile readers with the AMP project. I only wish they could do so without hurting the content creators.
 
