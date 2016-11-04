@@ -1,4 +1,4 @@
-Two weeks ago I wrote a blog post with a controversial title [Google may be stealing your mobile traffic](https://www.alexkras.com/google-may-be-stealing-your-mobile-traffic/) where I outlined some criticism of [Accelerated Mobile Pages](https://www.ampproject.org/) (AMP) project. Shortly after, Paul Bakaus (a developer advocate for AMP project) invited me to join him and Malte Ubl (product manager for AMP project) for lunch to further discuss my concerns.
+Two weeks ago I wrote a blog post with a controversial title [Google may be stealing your mobile traffic](https://www.alexkras.com/google-may-be-stealing-your-mobile-traffic/), where I outlined some criticism of [Accelerated Mobile Pages](https://www.ampproject.org/) (AMP) project. Shortly after Paul Bakaus (a developer advocate for AMP project) invited me to join him and Malte Ubl (product manager for AMP project) for lunch to further discuss my concerns.
 
 My original post was a bit confusing and should have been 2 separate posts. 90% was simply me outlining mistakes that I've made implementing AMP on my site. The other 10% I believe to be a valid criticism of the AMP project.
 
@@ -8,6 +8,8 @@ There were 2 main concerns that I brought up about the AMP implementation:
 
 1. Google was caching AMP pages and serving cached version from their search results.
 1. Google provided a tool bar at the top, with a link to the original source, but there was no easy way to copy or click through to that link. This UX was encouraging users to get back to Google search results instead.
+
+<img src="https://www.alexkras.com/wp-content/uploads/3-close-button.png" alt="3-close-button" width="563" height="522" />
 
 ## Web Cache
 
@@ -27,9 +29,19 @@ My first question was if I could get the speed up that AMP provides without part
 
 Removing this link will essentially "disable" the AMP cache.
 
-Another option is to remove the `amp` tag from the `html` tag inside the AMP page.
+Another option is to remove the `amp` tag from the `html` tag inside of the AMP page.
 
-`<html amp lang="en">` to `<html>`
+```
+<html amp lang="en">
+...
+</html>
+```
+to 
+```
+<html>
+...
+</html>
+```
 
 HTML pages are not valid AMP pages without the `amp` tag. Therefore removing this tag will prevent the page from being cached.
 
@@ -64,9 +76,9 @@ A lot of my pain with AMP came not from the AMP project itself, but rather from 
 
 While I noticed comments being removed, I did not realize it applied to analytics and other scripts. I've also made a false assumption that users will have an easy way to get to the "original" version of my post, where they will be able to access all of the removed content.
 
-As a result of my original post, some [Github issues](https://www.alexkras.com/google-may-be-stealing-your-mobile-traffic/#comment-55326) were created for WordPress AMP plugin. So things might get better in the future.
+As a result of my original post, some [Github issues](https://www.alexkras.com/google-may-be-stealing-your-mobile-traffic/#comment-55326) were created for WordPress AMP plugin, therefore things might get better in the future.
 
-I did bring up the current state of the WordPress AMP plugin and Malte mentioned that WordPress was a partner in the AMP project. I am not sure exactly what "partner" means in this case or what role they are playing.
+I did bring up the current state of the WordPress AMP plugin and Malte mentioned that WordPress was a partner in the AMP project. I am not sure exactly what "partner" means in this case.
 
 What was interesting is that Google worked very closely with major publishers, such as BBC and Daily Mail, to make sure that they were happy with the AMP experience. My guess is that the Google team and the WordPress team did not work as closely on the AMP integration, even though Paul and Malte are aware of a number of issues with the WordPress plugin. 
 
@@ -74,7 +86,7 @@ As AMP was gaining steam, more and more small time WordPress publishers (such as
 
 I think the big difference here is that the big brands are much less concerned about click through rates to their original content. As long as their analytics and ads work, and their server loads are reduced, they are happy. They know that visitors will remember if they read something on BBC, even if the URL showed up as `google.com/something`. Little guys like myself don't have this luxury.
 
-While WordPress integration is not Google's responsibility, I think it is very important for the success of the AMP project to fix it.
+While WordPress integration is not Google's responsibility, I think fixing it is very important for the success of the AMP project.
 
 ## Fat bar at the top
 
@@ -90,9 +102,9 @@ I don't think that Google set out to steal our traffic. In Malte's own words, fr
 
 At the same time, it is clear to me that AMP is not as decentralized as the original web.
 
-When I've first learned of AMP I assumed it to be a smaller and optimized subset of existing Web. As I learned more about the project, I realized that it was it's own thing. AMP acts as a new layer created on top of the existing web. It functions similarly, but at the same time creates a number of different paradigms.
+When I first learned of AMP I assumed it to be a smaller and optimized subset of existing Web. As I learned more about the project, I realized that it was it's own thing. AMP acts as a new layer created on top of the existing web. It functions similarly, but at the same time creates a number of different paradigms.
 
-I **am** keeping my WordPress AMP plugin turned on. Even given all of the concerns with the AMP project and the WordPress AMP plugin, AMP gets one thing right - **loads content really fast on mobile devices**. For that a lot of little things can be (temporarily) forgotten.
+I **am** keeping my WordPress AMP plugin turned on. Even given all of the concerns with the AMP project and the WordPress AMP plugin, AMP gets one thing right - **loads content really fast on mobile devices**. For that, a lot of little things can be (temporarily) forgotten.
 
 At the same time I hope that people who chose to participate in the AMP ecosystem will understand all of the trade-offs involved and get to make an informed decision.
 
@@ -106,6 +118,6 @@ Here is the list of optimization suggestions from my initial post:
 1. Make the title of the post clickable, taking the user back to non AMP version of the page.
 1. Make sure your ads and other promotional material is properly integrate into the AMP version.
 
-Last but not least, I would like to say the AMP project appears to be in good hands. Both Paul and Malte are very open to constructive criticism and discussing how AMP project can be improved. So much so that they are willing to take their time to have a lunch with some random guy from the internet. 
+Last but not least, I would like to say that the AMP project appears to be in good hands. Both Paul and Malte are very open to constructive criticism and discussing how AMP project can be improved. So much so, that they are willing to take their time to have a lunch with some random guy from the internet. 
 
 While their lunch capacity is probably limited, if you have any feedback on the AMP project please make sure to let them know via [GitHub Issues](https://github.com/ampproject/amphtml/issues/new), Stack Overflow, or the AMP mailing list. Updated list of all those links can be found under the [Support section of the AMP site](https://www.ampproject.org/support/faqs/).
