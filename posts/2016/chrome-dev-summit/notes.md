@@ -1,4 +1,4 @@
-#  Notes from the 2016 Chrome Dev Summit
+# Notes from the 2016 Chrome Dev Summit
 
 Originally posted on [http://www.apixio.com/technical-post/notes-from-the-2016-chrome-dev-summit/](http://www.apixio.com/technical-post/notes-from-the-2016-chrome-dev-summit/)
 
@@ -46,7 +46,7 @@ Network (MDN)](https://developer.mozilla.org/en-US/Apps/Progressive) means:
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Progressive Web Apps as a term is new but the concept has been around for a very long time. Look at HTA <a href="https://twitter.com/hashtag/chromedevsummit?src=hash">#chromedevsummit</a> <a href="https://twitter.com/patrickkettner">@patrickkettner</a></p>&mdash; Abraham Williams (@abraham) <a href="https://twitter.com/abraham/status/797228227945111553">November 12, 2016</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-**Progressive Web Apps takeaways**
+### Progressive Web Apps takeaways
 
   * Progressive Web App != Single Page Application
   * Progressive Web Apps = Smaller user acquisition funnel and faster updates (no need to wait for the App Store)
@@ -54,7 +54,7 @@ Network (MDN)](https://developer.mozilla.org/en-US/Apps/Progressive) means:
 
 ## Tech
 
-**Service Workers**
+### Service Workers
 
 Service Workers (not to be confused with Web Workers) are a big deal. [MDN
 defines Service Workers as follows](https://developer.mozilla.org/en-
@@ -79,20 +79,20 @@ other options.
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">&quot;Hundreds of millions of pages are loaded from ServiceWorker per day in Chrome&quot; <a href="https://twitter.com/hashtag/ChromeDevSummit?src=hash">#ChromeDevSummit</a></p>&mdash; Eric Lawrence (@ericlaw) <a href="https://twitter.com/ericlaw/status/797214344773668864">November 11, 2016</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-**Service Worker takeaways**
+### Service Worker takeaways
 
   * Service Worker Precipices <https://serviceworke.rs/>
   * Offline Google Analytics Library – Pushes Events after user gets back online <https://www.npmjs.com/package/sw-routing>
   * Good library to get started with Service Workers – [sw-precache](https://github.com/GoogleChrome/sw-precache)
   * [Live coding session adding Service Worker to a page](https://youtu.be/X8EQSy-ajo4?list=PLNYkxOF6rcIBTs2KPy1E6tIYaWoFcG3uj)
 
-**Web Assembly**
+### Web Assembly
 
   * Latest Web Assembly info and step by step guide can be found at <http://webassembly.org/>
   * Interesting demo of how Web Assembly can be used today behind a flag (towards the middle of this talk) – [Advanced JS performance with V8 and Web Assembly](https://youtu.be/PvZdTZ1Nl5o?list=PLNYkxOF6rcIBTs2KPy1E6tIYaWoFcG3uj)
   * Web Assembly is on by default in early 2017
 
-**HTTPS**
+### HTTPS
 
   * Sites with input fields (password, credit card etc) and no HTTPs are going to get big “Not Secure” warning on 01/2017
   * HTTPs usage report – it’s growing <https://www.google.com/transparencyreport/https/metrics/?hl=en>
@@ -100,7 +100,7 @@ other options.
   * Service Workers, Push and other APIs are ONLY available over HTTPs
   * [Full HTTPs Talk](https://youtu.be/iP75a1Y9saY?list=PLNYkxOF6rcIBTs2KPy1E6tIYaWoFcG3uj) and [Slides](https://t.co/L0E3vLhWrD)
 
-**ES6+**
+### ES6+
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="ht" dir="ltr"><a href="https://twitter.com/hashtag/chromedevsummit?src=hash">#chromedevsummit</a>  JS Languaje Features <a href="https://t.co/CKu0uTM3VB">pic.twitter.com/CKu0uTM3VB</a></p>&mdash; Milton Yarleque (@myarleq) <a href="https://twitter.com/myarleq/status/797207603717828608">November 11, 2016</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
@@ -108,7 +108,7 @@ other options.
   * V8 has Great coverage – Chrome and Node.js 7
   * Async/Await available behind –harmony-async-await in Node.js 7 and Canary
 
-**Web Manifest**
+### Web Manifest
 
 MDN [defines Web Manifest](https://developer.mozilla.org/en-
 US/docs/Web/Manifest) as follows:
@@ -124,14 +124,14 @@ Progressive Web App.
   * Web tool to [auto generate Web Manifest file](https://webmanife.st/)
   * CLI tool to [help generate Web Manifest](https://www.npmjs.com/package/manifest-json)
 
-**Polymer**
+### Polymer
 
   * Blessed by numerous speakers as one of the few performant frameworks (in addition to preact) that can be used to create Progressive Web Apps
   * Polymer App Toolbox – [Collection of components to build Progressive Web Apps](https://www.polymer-project.org/1.0/toolbox/)
   * polydev – Polymer [Chrome Dev tools extension](https://github.com/PolymerLabs/polydev)
   * polyperf – [Simple web page performance harness](https://github.com/PolymerLabs/polyperf)
 
-**Accelerated Mobile Pages (AMP)**
+### Accelerated Mobile Pages (AMP)
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Announced today: AMP can now prewarm caches for onward journeys in all browsers (including Safari!!!) <a href="https://twitter.com/hashtag/ChromeDevSummit?src=hash">#ChromeDevSummit</a></p>&mdash; Malte Ubl (@cramforce) <a href="https://twitter.com/cramforce/status/797151433170632704">November 11, 2016</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
@@ -140,26 +140,26 @@ Progressive Web App.
   * Allows for a proper AMP to PWA hand off
   * Full Talk – [From AMP to PWA – the best of both worlds](https://youtu.be/M_ZCgbEGyHY?list=PLNYkxOF6rcIBTs2KPy1E6tIYaWoFcG3uj)
 
-**Push Notifications**
+### Push Notifications
 
   * Over 500,000 Domains using Push API
   * With Service Worker can push notification, long after a browser tab is closed
 
-**Local Storage**
+### Local Storage
 
   * Use it as local cache to get a huge performance win
   * Full talk dedicated to the subject, with some Browser specific numbers – [The State of Storage](https://youtu.be/gq80Y5-ZJdg?list=PLNYkxOF6rcIBTs2KPy1E6tIYaWoFcG3uj)
 
-**Preload**
+### Preload
 
   * You can use &lt;link rel=”preload” (Chrome only) to ask Chrome to pre-fetch some data
 
-**Credentials API**
+### Credentials API
 
   * Proposal to let browser maintain Users being Authenticated with various sites
   * [Full talk](https://youtu.be/NJ-sphu2DqQ?list=PLNYkxOF6rcIBTs2KPy1E6tIYaWoFcG3uj)
 
-**Payments API**
+### Payments API
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">The Payment Request API gets me so hyped. Imagine what it could do for subscription content! <a href="https://t.co/LsoyVKeUXh">https://t.co/LsoyVKeUXh</a> <a href="https://twitter.com/hashtag/ChromeDevSummit?src=hash">#ChromeDevSummit</a> <a href="https://t.co/RwY4IyscYM">pic.twitter.com/RwY4IyscYM</a></p>&mdash; Rachel🦄Nabors (@rachelnabors) <a href="https://twitter.com/rachelnabors/status/796812511106371585">November 10, 2016</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
@@ -167,26 +167,26 @@ Progressive Web App.
   * Proposal to let browser store payment information and simplify payment process
   * [Full Talk](https://youtu.be/U0LkQijSeko?list=PLNYkxOF6rcIBTs2KPy1E6tIYaWoFcG3uj)
 
-**Facial Recognition API**
+### Facial Recognition API
 
   * It’s coming
 
-**Canvas Capture API**
+### Canvas Capture API
 
   * canvas.captureStream available in Firefox now
 
-**Firebase**
+### Firebase
 
   * Firebase hosting supports HTTP2 out of the box
 
-**Houdini**
+### Houdini
 
   * New proposal to simplify CSS?
   * [Slides](https://speakerdeck.com/surma/houdini-breakout-session)
 
 ## Tools
 
-**Chrome Dev Tools**
+### Chrome Dev Tools
 
   * Full talk – [Debugging The Web](https://youtu.be/HF1luRD4Qmk?list=PLNYkxOF6rcIBTs2KPy1E6tIYaWoFcG3uj)
   * Can now debug Node.js code in Dev Tools
@@ -195,7 +195,7 @@ Progressive Web App.
   * Intelligent multi-line entry in Console (line Node console) no more need for Shift+Enter
   * Better call stack
 
-**Lighthous**
+### Lighthous
 
 Lighthouse analyzes web apps and web pages, collecting modern performance
 metrics and insights on developer best practices.
@@ -235,7 +235,7 @@ Cool tool to analyze your website’s performance. Check it out:
   * Star bugs you care about to move the web forward
   * If you use it, browser will support it!
 
-**Apple**
+### Apple
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">On <a href="https://twitter.com/hashtag/ChromeDevSummit?src=hash">#ChromeDevSummit</a> there are people from Microsoft, Firefox, Opera... but no Apple. Do <a href="https://twitter.com/Apple">@Apple</a> remember Job&#39;s words: Write amazing Web apps? <a href="https://t.co/YqLJgRV1dd">pic.twitter.com/YqLJgRV1dd</a></p>&mdash; Valentyn Shybanov (@olostan) <a href="https://twitter.com/olostan/status/797253468373143553">November 12, 2016</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
@@ -243,17 +243,17 @@ Cool tool to analyze your website’s performance. Check it out:
   * Google, Mozilla, Opera, Samsung, Microsoft came to the [Browser Vendor panel](https://youtu.be/3VV-9_dCYuM?list=PLNYkxOF6rcIBTs2KPy1E6tIYaWoFcG3uj), Apple decline to participate
   * To be fair an Engineer from Apple was present at the Summit and [made himself available](https://twitter.com/jonathandavis/status/796903846437978113)
 
-**Microsoft**
+### Microsoft
 
   * Progressive Web Apps will get **automatically ingested into Windows App Store**
   * Progressive Web Apps are top priority for MicroSoft for the next year
   * Edge Dev team hired some great people like [@auchenberg](https://twitter.com/auchenberg?lang=en) and [@rachelnabors](https://twitter.com/rachelnabors)
 
-**FireFox**
+### FireFox
 
   * Pretty much on board with everything that Google is proposing
 
-**Brave**
+### Brave
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">At <a href="https://twitter.com/hashtag/chromedevsummit?src=hash">#chromedevsummit</a> but not on Browser vendor panel -- <a href="https://twitter.com/brave">@Brave</a> is too small, apparently, even though they just asked about ads &amp; ad blocking.</p>&mdash; BrendanEich (@BrendanEich) <a href="https://twitter.com/BrendanEich/status/797253795927330816">November 12, 2016</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
