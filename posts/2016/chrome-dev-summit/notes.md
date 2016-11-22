@@ -1,6 +1,4 @@
-# Notes from the 2016 Chrome Dev Summit
-
-Originally posted on [http://www.apixio.com/technical-post/notes-from-the-2016-chrome-dev-summit/](http://www.apixio.com/technical-post/notes-from-the-2016-chrome-dev-summit/)
+*Originally posted on [http://www.apixio.com/technical-post/notes-from-the-2016-chrome-dev-summit/](http://www.apixio.com/technical-post/notes-from-the-2016-chrome-dev-summit)*
 
 Two weeks ago I got to attend the Chrome Dev Summit, an annual two-day conference
 hosted by Google where they announced latest developments relevant to the web
@@ -8,8 +6,7 @@ technology. Here are my full notes from this conference. Since there was so
 much information presented, I decided to organize it by subject, instead of
 chronological order of talks presented.
 
-[You can watch all of the recorded
-talks.](https://www.youtube.com/playlist?list=PLNYkxOF6rcIBTs2KPy1E6tIYaWoFcG3uj)
+[You can watch all of the recorded talks on their YouTube Channel.](https://www.youtube.com/playlist?list=PLNYkxOF6rcIBTs2KPy1E6tIYaWoFcG3uj)
 
 ## Statistics and Charts
 
@@ -57,8 +54,7 @@ Network (MDN)](https://developer.mozilla.org/en-US/Apps/Progressive) means:
 ### Service Workers
 
 Service Workers (not to be confused with Web Workers) are a big deal. [MDN
-defines Service Workers as follows](https://developer.mozilla.org/en-
-US/docs/Web/API/Service_Worker_API):
+defines Service Workers as follows](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API):
 
 Service workers essentially act as proxy servers that sit between web
 applications, and the browser and network (when available). They are intended
