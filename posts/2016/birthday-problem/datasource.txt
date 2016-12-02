@@ -1,0 +1,7 @@
+Text file from: http://www.imdb.com/interfaces
+
+Then get the ftp://ftp.fu-berlin.de/pub/misc/movies/database/biographies.list.gz
+
+From 1983 To 1985 - total 15704
+
+TODO check structuree when on WIFI

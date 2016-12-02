@@ -1,0 +1,118 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <style>
+        body {
+            padding-top: 20px;       
+        }
+        table {
+            width: 100%;
+        }
+        table th,td {
+            border: 1px solid lightgrey;
+        }
+        .actors {
+            max-height: 80%;
+            overflow: scroll;
+        }
+        .results td {
+            width: 50%;
+        }
+.ng-move,
+.ng-enter,
+.ng-leave {
+  transition:all linear 0.1s;
+}
+
+.ng-leave.ng-leave-active,
+.ng-move,
+.ng-enter {
+  opacity:0;
+  max-height:0;
+}
+
+.ng-leave,
+.ng-move.ng-move-active,
+.ng-enter.ng-enter-active {
+  opacity:1;
+  max-height:30px;
+}
+    </style>
+    <script src="node_modules/angular/angular.min.js"></script>
+    <!--<script src="node_modules/angular-animate/angular-animate.min.js"></script>-->
+    <script src="node_modules/lodash/lodash.min.js"></script>
+    <script src="app.js"></script>
+</head>
+
+<body ng-app="birthdayApp">
+    <birthday-app></birthday-app>
+    <script type="text/ng-template" id="birthday-app.component.html">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    Sample Size :
+                    <span ng-repeat="option in ba.options">
+                        <label>
+                            <input 
+                                type="radio" 
+                                ng-model="ba.selected" 
+                                ng-value="option"
+                                ng-change="ba.reSample()"
+                            > 
+                            {{option}}
+                        </label>
+                    </span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <button class="btn btn-primary" ng-click="ba.reSample()">Try Again</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div>
+                        <div ng-if="ba.matches.length === 0">
+                            <h3>No Matches Found</h3>
+                        </div>
+                        <div ng-if="ba.matches.length > 0">
+                            <h3>Matches Found</h3>
+                            <table class="result">
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Birthday</th>
+                                </tr>
+                                <tr ng-repeat="match in ba.matches track by $index">
+                                    <td>{{match.name}}</td>
+                                    <td>{{match.db}}</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div>
+                        <h3>{{ ba.selected }} Random Actors</h3>
+                        <div class="actors">
+                            <table ng-if="ba.birthdays.length > 0">
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Birthday</th>
+                                </tr>
+                                <tr ng-repeat="bd in ba.birthdays track by $index">
+                                    <td>{{bd.id}}</td>
+                                    <td>{{bd.name}}</td>
+                                    <td>{{bd.db}}</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </script>
+</body>
+
+</html>
