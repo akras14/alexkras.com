@@ -5,7 +5,7 @@ with open("token-tweets.json") as f:
     tokent = json.load(f)
 
 labels = []
-for i,t in enumerate(tokent, 1):
+for i,t in enumerate(tokent):
     labels.append((i, " ".join(t)))
 
 with open("labels.csv", "w") as f:

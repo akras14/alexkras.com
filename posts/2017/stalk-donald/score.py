@@ -1,39 +1,25 @@
-
 """Write labels file"""
 import json
 from tqdm import tqdm
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.metrics.pairwise import cosine_similarity
 
 with open("token-tweets.json") as f:
     tokent = json.load(f)
 
+# http://blog.christianperone.com/2013/09/machine-learning-cosine-similarity-for-vector-space-models-part-iii/
+
 tokent = [set(t) for t in tokent]
+data = [" ".join(t) for t in tokent]
 
-def findIntersection(first, second):
-    intersection = first & second               # Find a sub set of words that is present in both lists
-    intersectionLength = len(intersection)      # Words both comments have in common
-    intersectionLength = float(intersectionLength)
-    wordCount = len(first) + len(second)        # Total length of both comments
+tfidf_vectorizer = TfidfVectorizer()
+tfidf_matrix = tfidf_vectorizer.fit_transform(data)
 
-    if wordCount == 0:                          # Corner case
-        return 0
-    else:
-        return (intersectionLength/wordCount)   # Intersection score between two comments
-
-alliter = {}
-for i,l in enumerate(tqdm(tokent[:5000]), 1):
-    for j,r in enumerate(tokent[:5000], 1):
-        if l == r:
-            continue
-        res = findIntersection(l,r)
-        if res > 0.4:
-            res = (res - 0.4) * 100
-            t1 = (i, j, res)
-            t2 = (j, i, res)
-            if t1 not in alliter and t2 not in alliter:
-                alliter[t1] = True
-                alliter[t2] = True
+cs = cosine_similarity(tfidf_matrix, tfidf_matrix)
 
 with open("edges.csv", "w") as f:
     f.write("Source;Target;Weight;Type\n")
-    for a in alliter:
-        f.write('{};{};{};"Undirected"\n'.format(*a))
+    for i, row in enumerate(tqdm(cs)):
+        for j, col in enumerate(row):
+            if col < 0.99 and col > 0.8:
+                f.write('{};{};{};"Undirected"\n'.format(i,j,col))
