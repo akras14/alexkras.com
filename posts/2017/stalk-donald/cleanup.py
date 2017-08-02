@@ -6,7 +6,7 @@ from tqdm import tqdm
 
 stopwords = stopwords.words("english")
 
-with open("all-tweets.json") as f:
+with open("all-tweets-2017.json") as f:
     allt = json.load(f)
 
 def filterWords(t):
