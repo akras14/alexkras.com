@@ -3,3 +3,5 @@ scripts/sandbox
 drafts
 .vscode
 .DS_Store
+venv
+posts/2018/trolls/data/
